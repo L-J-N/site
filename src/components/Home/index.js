@@ -16,8 +16,6 @@ export default class Home extends Component {
   }
   goSection() {
     Scroll.animateScroll.scrollTo(this.refs.section2.offsetTop);
-    //ReactDOM.findDOMNode(this.refs.section2).scrollIntoView();
-    console.log(ReactDOM.findDOMNode(this.refs.section2));
   }
   render() {
     return (
