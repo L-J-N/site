@@ -17,13 +17,13 @@ export default class Slider extends Component {
   precedent() {
     let { index } = this.state;
     this.setState({
-      index: index === 0 ? 5 : --index
+      index: index == 0 ? 5 : --index
     });
   }
   suivant() {
     let { index } = this.state;
     this.setState({
-      index: index === 5 ? 0 : ++index
+      index: index == 5 ? 0 : ++index
     });
   }
   selectRadio(e) {
@@ -50,7 +50,7 @@ export default class Slider extends Component {
                   <input type="radio"
                         key={ i }
                         value={ i }
-                        checked={ this.state.index === i }
+                        checked={ this.state.index == i }
                         onClick={this.selectRadio} />
                 );
               })
