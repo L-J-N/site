@@ -1,14 +1,78 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
+import Scroll  from 'react-scroll';
+
+import Slider from './components/Slider';
+import ProjetDuMois from './components/ProjetDuMois';
+import ProjetPopulaire from './components/ProjetPopulaire';
 
 import './index.css';
 
 export default class Home extends Component {
-  render() {    
+  constructor() {
+  super();
+
+    this.goSection = this.goSection.bind(this);
+  }
+  goSection() {
+    Scroll.animateScroll.scrollTo(this.refs.section2.offsetTop);
+    //ReactDOM.findDOMNode(this.refs.section2).scrollIntoView();
+    console.log(ReactDOM.findDOMNode(this.refs.section2));
+  }
+  render() {
     return (
-      <div>
+      <div >
         <h1>
           Home
         </h1>
+        <section className="container section1" >
+          <Slider />
+          <div className="columns" >
+            <div className="column" >
+              <article className="message is-primary">
+                <div className="message-header">
+                  Découvrir les projets
+                </div>
+                <div className="message-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque risus mi, tempus quis placerat ut, porta nec
+                  nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam
+                  gravida purus diam, et dictum felis venenatis efficitur.
+                  Aenean ac eleifend lacus, in mollis lectus. Donec sodales,
+                  arcu et sollicitudin porttitor, tortor urna tempor ligula,
+                  id porttitor mi magna a neque. Donec dui urna, vehicula et
+                  sem eget, facilisis sodales sem.
+                </div>
+              </article>
+            </div>
+            <div className="column" >
+             <article className="message is-info">
+                <div className="message-header">
+                  Démarrer un projet
+                </div>
+                <div className="message-body">
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pellentesque risus mi, tempus quis placerat ut, porta nec
+                  nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam
+                  gravida purus diam, et dictum felis venenatis efficitur.
+                  Aenean ac eleifend lacus, in mollis lectus. Donec sodales,
+                  arcu et sollicitudin porttitor, tortor urna tempor ligula,
+                  id porttitor mi magna a neque. Donec dui urna, vehicula et
+                  sem eget, facilisis sodales sem.
+                </div>
+                </article>
+              </div>
+          </div>
+          <div className="content has-text-centered" >
+            <a className="button is-large" onClick={this.goSection} >
+                <i className="fa fa-arrow-down"></i>
+            </a>
+          </div>
+        </section>
+        <section ref="section2" className="section2">
+          <ProjetDuMois />
+          <ProjetPopulaire />
+        </section>
       </div>
     );
   }
