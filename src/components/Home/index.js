@@ -20,12 +20,9 @@ export default class Home extends Component {
   render() {
     return (
       <div >
-        <h1>
-          Home
-        </h1>
         <section className="container section1" >
           <Slider />
-          <div className="columns" >
+          <div className="columns info-bulle" >
             <div className="column" >
               <article className="message is-primary">
                 <div className="message-header">
@@ -61,7 +58,7 @@ export default class Home extends Component {
                 </article>
               </div>
           </div>
-          <div className="content has-text-centered" >
+          <div className="content has-text-centered scroll-button" >
             <a className="button is-large" onClick={this.goSection} >
                 <i className="fa fa-arrow-down"></i>
             </a>

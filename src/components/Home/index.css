@@ -1,6 +1,16 @@
 
 .section1 {
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.info-bulle {
+  flex: 1 1 20vh;
+}
+
+.scroll-button {
+  flex: 1 1 20vh;
 }
 
 .section2 {
