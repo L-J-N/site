@@ -2,9 +2,6 @@ import React from 'react';
 import { Link, IndexLink } from 'react-router';
 
 export default class Menu extends React.Component {
-  constructor() {
-    super();
-  }
   render() {
     return (
       <nav className="nav">
