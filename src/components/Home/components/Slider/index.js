@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-transition-group';
 
 import './index.css';
+
+const Carroussel = (props) => (
+  <ReactCSSTransitionGroup
+    transitionName="slide"
+    transitionEnterTimeout={500}
+    transitionLeaveTimeout={500} >
+    <img key={props.index}
+         className={props.class}
+         src={props.url} alt="" />
+  </ReactCSSTransitionGroup>
+);
 
 export default class Slider extends Component {
   constructor() {
@@ -17,13 +29,13 @@ export default class Slider extends Component {
   precedent() {
     let { index } = this.state;
     this.setState({
-      index: index == 0 ? 5 : --index
+      index: parseInt(index, 10) === 0 ? 5 : --index
     });
   }
   suivant() {
     let { index } = this.state;
     this.setState({
-      index: index == 5 ? 0 : ++index
+      index: parseInt(index, 10) === 5 ? 0 : ++index
     });
   }
   selectRadio(e) {
@@ -32,7 +44,12 @@ export default class Slider extends Component {
     });
   }
   render() {
-    const url = "http://placehold.it/128x128?text=" + this.state.index;
+
+    const image  = {
+      index : this.state.index,
+      url: "http://placehold.it/128x128?text=" + this.state.index,
+      class: "border-" + this.state.index
+    };
 
     return (
       <div className="slider-container">
@@ -40,18 +57,18 @@ export default class Slider extends Component {
           <i className="fa fa-arrow-left"></i>
         </a>
         <div className="slider-content">
-          <figure  className="slider-figure image is-128x128">
-            <img key={1} className="slider-image" src={url} />
+          <figure className="slider-figure image is-128x128">
+              <Carroussel {...image} />
           </figure>
           <div>
             {
               [0, 1, 2, 3, 4, 5].map((i) => {
                 return (
                   <input type="radio"
-                        key={ i }
-                        value={ i }
-                        checked={ this.state.index == i }
-                        onClick={this.selectRadio} />
+                    key={ i }
+                    value={ i }
+                    checked={ parseInt(this.state.index, 10) === i }
+                    onChange={this.selectRadio} />
                 );
               })
             }
