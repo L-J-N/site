@@ -1,28 +1,10 @@
 import React, { Component } from 'react';
 import TransitionGroup from 'react-addons-transition-group';
-import { TweenLite } from "gsap";
-import { findDOMNode } from 'react-dom';
 
+import Carrousel from '../Carrousel';
 
 import './index.css';
 
-class Carroussel extends React.Component {
-  componentWillEnter(callback) {
-    const el = findDOMNode(this);
-    TweenLite.fromTo(el, 0.5, { x: -400, opacity: 1 }, { x: 0, opacity: 1 ,onComplete: callback });
-  }
-  componentWillLeave(callback) {
-    const el = findDOMNode(this);
-    TweenLite.fromTo(el, 0.5, { x:0, opacity: 1 }, { x: 400, opacity: 0, onComplete: callback });
-  }
-  render() {
-    return (
-      <figure className="slider-figure image is-128x128">
-        <img key={this.props.index} className={this.props.class}  src={this.props.url} alt="" />
-      </figure>
-    );
-  }
-}
 
 export default class Slider extends Component {
   constructor() {
@@ -71,7 +53,7 @@ export default class Slider extends Component {
         </a>
         <div className="slider-content">
           <TransitionGroup style={{display: 'flex'}}>
-            <Carroussel key={this.state.index} {...image}/>
+            <Carrousel key={this.state.index} {...image}/>
           </TransitionGroup>
           <div>
             {

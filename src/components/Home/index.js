@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Scroll  from 'react-scroll';
 
-import Slider from './components/Slider';
-import ProjetDuMois from './components/ProjetDuMois';
-import ProjetPopulaire from './components/ProjetPopulaire';
+import Slider from './Slider';
+import ProjetDuMois from './ProjetDuMois';
+import ProjetPopulaire from './ProjetPopulaire';
 
 import './index.css';
 
