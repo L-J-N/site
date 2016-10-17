@@ -59,7 +59,7 @@ export default class Home extends Component {
           </div>
           <div className="content has-text-centered scroll-button" >
             <a className="button is-large" onClick={this.goSection} >
-                <i className="fa fa-arrow-down"></i>
+              <i className="fa fa-arrow-down"></i>
             </a>
           </div>
         </section>

@@ -6,11 +6,11 @@
 }
 
 .info-bulle {
-  flex: 1 1 20vh;
+  flex: 1 1 10vh;
 }
 
 .scroll-button {
-  flex: 1 1 15vh;
+  flex: 1 1 auto;
 }
 
 .section2 {

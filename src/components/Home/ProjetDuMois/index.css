@@ -1,0 +1,10 @@
+  .container-projet-mois {
+     display: flex;
+   }
+
+  .descrition-projet-mois {
+    display: flex;
+    flex-direction: column;
+    align-items:  center;
+    margin: 10px;
+  }
