@@ -1,0 +1,17 @@
+.apercu-categorie {
+  margin-bottom: 20px
+}
+
+.apercu-categorie-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 60px;
+}
+
+
+.apercu-categorie-liste {
+  display: flex;
+  align-items: center;
+}
+
