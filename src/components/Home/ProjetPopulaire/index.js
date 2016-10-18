@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import ApercuProjet from '../../ApercuProjet';
+
 import './index.css';
 
 export default class ProjetPopulaire extends Component {
@@ -11,21 +13,7 @@ export default class ProjetPopulaire extends Component {
           {
             this.props.listeProjet.map((projet, i) => {
               return (
-                <div key={i} className="card project-populaire-card" >
-                  <div className="card-image">
-                    <figure className="image is-3by2">
-                      <img src={projet.imageUrl} alt={projet.nom} />
-                    </figure>
-                  </div>
-                  <header className="card-header">
-                     <p className="card-header-title">{projet.nom}</p>
-                  </header>
-                  <div className="card-content">
-                    <div className="content">
-                      {projet.description}
-                    </div>
-                  </div>
-                </div>
+                  <ApercuProjet key={i} {...projet}/>
               );
             })
           }
