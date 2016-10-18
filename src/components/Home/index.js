@@ -47,7 +47,7 @@ export default class Home extends Component {
       {
         nom: "Projet 3",
         imageUrl: "http://placehold.it/512x512?text=projet 3",
-        description: lorem
+        description: lorem + lorem
       }
     ];
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 
 import Menu from '../Menu';
+import Footer from '../Footer';
 
 class App extends Component {
   render() {
@@ -15,10 +16,15 @@ class App extends Component {
           </div>
         </section>
         <section className="section">
-          <div className="container app">
-            { React.cloneElement(this.props.children, this.props) }
+          <div className="container">
+            {React.cloneElement(this.props.children, this.props)}
           </div>
         </section>
+        <footer className="footer">
+          <div className="container">
+            <Footer />
+          </div>
+        </footer>
       </div>
     );
   }
