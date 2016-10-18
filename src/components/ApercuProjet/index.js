@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ProgressBar from '../ProgressBar';
 
 import './index.css';
 
@@ -18,6 +19,7 @@ export default class ApercuProjet extends Component {
           <div className="content">
             {this.props.description}
           </div>
+          <ProgressBar {...this.props} />
         </div>
       </div>
     );

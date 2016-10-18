@@ -1,5 +1,3 @@
-
-
 function fetchData() {
   return fetch(process.env.PUBLIC_URL + '/data/categorie.json').then((response) => {
     return response.json();

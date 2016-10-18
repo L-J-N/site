@@ -1,0 +1,7 @@
+ .progress-bar {
+ }
+
+  .progressbar-info {
+    display: flex;
+    justify-content: space-around;
+ }
