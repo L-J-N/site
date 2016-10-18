@@ -1,0 +1,100 @@
+[
+  {
+    "id" : 1,
+    "nom": "Categorie 1",
+    "listeProjet": [
+      {
+        "nom": "Projet 1",
+        "imageUrl": "http://placehold.it/512x512?text=projet 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 2",
+        "imageUrl": "http://placehold.it/512x512?text=projet 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 3",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 4",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 5",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 6",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 7",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 8",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+      {
+        "nom": "Projet 9",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    },
+    {
+        "nom": "Projet 10",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    }
+    ]
+  },
+  {
+    "id" : 2,
+    "nom": "Categorie 2",
+     "listeProjet": [
+      {
+        "nom": "Projet 1",
+        "imageUrl": "http://placehold.it/512x512?text=projet 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 2",
+        "imageUrl": "http://placehold.it/512x512?text=projet 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 3",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    }
+    ]
+  },
+  {
+    "id" : 3,
+    "nom": "Categorie 3",
+     "listeProjet": [
+      {
+        "nom": "Projet 1",
+        "imageUrl": "http://placehold.it/512x512?text=projet 1",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 2",
+        "imageUrl": "http://placehold.it/512x512?text=projet 2",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+      },
+      {
+        "nom": "Projet 3",
+        "imageUrl": "http://placehold.it/512x512?text=projet 3",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi tempus quis placerat ut, porta necgravida purus diam, et dictum felis venenatis efficitur.Aenean ac eleifend lacus, in mollis lectus. Donec sodales,arcu et sollicitudin porttitor, tortor urnatempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula etsem eget, facilisis sodales sem."
+    }
+    ]
+  }
+]

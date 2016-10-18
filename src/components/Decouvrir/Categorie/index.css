@@ -1,0 +1,4 @@
+.categorie-liste-projet {
+  display: flex;
+  flex-wrap: wrap;
+}

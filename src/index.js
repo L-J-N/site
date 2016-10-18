@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// A modifier quand il y aura un vrai hosting
+// TODO A modifier quand il y aura un vrai hosting
 // import { browserHistory } from 'react-router';
 import { HashHistory } from 'react-router';
 
