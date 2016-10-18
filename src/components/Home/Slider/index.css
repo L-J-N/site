@@ -1,5 +1,5 @@
 .slider-container {
-  border: 2px solid gold;
+  border: 1px solid gray;
   width: 100%;
   margin-bottom: 20px;
   flex: 2 2 30vh;
@@ -30,28 +30,4 @@
 }
 .slide-leave .slide-leave-active {
    transform: translateX(-100%);
-}
-
-
-.border-0 {
-  border: 2px solid red;
-}
-
-.border-1 {
-  border: 2px solid blue;
-}
-
-.border-2 {
-  border: 2px solid yellow;
-}
-
-.border-3 {
-  border: 2px solid green;
-}
-
-.border-4 {
-  border: 2px solid orange;
-}
-.border-5 {
-  border: 2px solid palevioletred;
 }
