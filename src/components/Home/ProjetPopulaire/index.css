@@ -1,0 +1,10 @@
+ .container-projet-populaire {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+ }
+
+ .project-populaire-card {
+   flex : 1 1 30vh;
+   margin : 0 10px 0 5px;
+ }
