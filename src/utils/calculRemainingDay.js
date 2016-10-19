@@ -1,8 +1,11 @@
 const oneDay = 24 * 60 * 60 * 1000;
 
 export default function calculRemainingDay(date) {
+  if (!date) {
+    return 0;
+  }
   const today = new Date();
-  today.setHours(0,0,0,0);
+  today.setHours(0, 0, 0, 0);
   const _date = date.split('-');
   const secondDate = new Date(_date[0], _date[1] - 1, _date[2]);
 

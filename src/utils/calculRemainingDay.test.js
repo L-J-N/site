@@ -1,6 +1,16 @@
 import calculRemainingDay from './calculRemainingDay';
 import { assert } from 'chai';
 
+it('gère le null', () => {
+  const diff = calculRemainingDay(null);
+  assert(diff === 0);
+});
+
+it('gère le undefined', () => {
+  const diff = calculRemainingDay(undefined);
+  assert(diff === 0);
+});
+
 it('diff 1', () => {
   const date = new Date();
   const diff = calculRemainingDay(formatDate(date));
