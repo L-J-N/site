@@ -11,7 +11,7 @@ export default class ProjetPopulaire extends Component {
         <h1 className="title is-1 has-text-centered" >Projet populaire</h1>
         <div className="container-projet-populaire" >
           {
-            this.props.listeProjet.map((projet, i) => {
+            this.props.listeProjet && this.props.listeProjet.map((projet, i) => {
               return (
                   <ApercuProjet key={i} {...projet}/>
               );
