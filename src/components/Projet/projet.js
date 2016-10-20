@@ -1,19 +1,12 @@
-import React, { Component, PropTypes } from 'react';
-import ProgressBar from '../ProgressBar';
+import React, { Component } from 'react';
 
 import './index.css';
 
-export default class ApercuProjet extends Component {
-  constructor() {
-    super();
-    this.click = this.click.bind(this);
-  }
-  click() {
-    this.context.router.push(`/projet/${this.props.id}`);
-  }
+export default class Projet extends Component {
   render() {
+    console.log(this.props);
     return (
-      <div className="card apercu-projet" onClick={this.click} >
+      <div className="card apercu-projet" >
         <div className="card-image">
           <figure className="image is-3by2">
             <img src={this.props.imageUrl} alt={this.props.nom} />
@@ -26,13 +19,8 @@ export default class ApercuProjet extends Component {
           <div className="content">
             {this.props.description}
           </div>
-          <ProgressBar {...this.props} />
         </div>
       </div>
     );
   }
 }
-
-ApercuProjet.contextTypes = {
-  router: PropTypes.object,
-};

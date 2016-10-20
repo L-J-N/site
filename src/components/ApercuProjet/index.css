@@ -1,6 +1,7 @@
   .apercu-projet {
     flex: 1 1 200px;
     margin: 10px;
+    cursor: pointer;
   }
 
   @media all and (min-width: 768px) {
