@@ -11,5 +11,7 @@ it('renders without crashing', () => {
     description: 'lorem'
   };
 
-  ReactDOM.render(<Projet {...projet}/>, div);
+  const params = {};
+
+  ReactDOM.render(<Projet {...projet} params={params}/>, div);
 });

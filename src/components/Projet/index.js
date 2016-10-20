@@ -17,7 +17,6 @@ export default class ProjetContainer extends Component {
     });
   }
   render() {
-    console.log(this.state.projet);
     return <div>{ this.state.projet ? <Projet {...this.state.projet} /> : null }</div>;
   }
 }
