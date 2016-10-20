@@ -1,12 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import ProgressBar from '../../ProgressBar';
 
 import './index.css';
 
 export default class ProjetDuMois extends Component {
+  constructor() {
+    super();
+    this.click = this.click.bind(this);
+  }
+  click() {
+    this.context.router.push(`/projet/${this.props.id}`);
+  }
   render() {
     return (
-      <div className="box" >
+      <div className="box" onClick={this.click} >
         <h1 className="title is-1 has-text-centered" >Projet du mois</h1>
         <div className="container-projet-mois">
           <figure className="image-projet-mois">
@@ -24,3 +31,8 @@ export default class ProjetDuMois extends Component {
     );
   }
 }
+
+ProjetDuMois.contextTypes = {
+  router: PropTypes.object,
+};
+
