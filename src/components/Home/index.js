@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+
 import Home from './home.js';
 import { getCategories } from '../../service';
 

@@ -1,0 +1,32 @@
+.projet-content {
+  display: flex;
+  justify-content: center;
+}
+
+.projet-left {
+  display: flex;
+  flex-direction: column;
+}
+
+.projet-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10vw;
+}
+
+.projet-stat {
+  border: 1px solid black;
+  padding: 5px;
+  font-size: x-large;
+}
+
+.projet-content img {
+  max-height: 320px;
+  width: 480px
+}
+
+.projet-user-info {
+  display: flex;
+  padding-bottom: 20px;
+}
