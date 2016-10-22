@@ -1,89 +1,71 @@
 import React, { Component } from 'react';
-import calculPercent from '../../utils/calculPercent';
-import calculRemainingDay from '../../utils/calculRemainingDay';
+import Social from './Social';
+import User from './User';
+import Stat from './Stat';
+import Description from './Description';
+import Evolution from './Evolution';
+import Commentaire from './Commentaire';
 
 import './index.css';
 
-const Stat = (props) => {
-  const percent = calculPercent(props.montant, props.total);
-  const nbJours = calculRemainingDay(props.dateFin);
-  return (
-    <div className="projet-stat">
-      <div>
-        <span className="icon is-large">
-          <i className="fa fa-money"></i>
-        </span>
-        {percent + ' '}%
-      </div>
-      <div>
-        {nbJours} {nbJours > 1 ? "jours restants" : "jour restant"}
-      </div>
-    </div>
-  );
-};
-
-const User = (props) => {
-  return (
-    <div>
-      <div className="projet-user-info">
-        <div>
-          <p>Jean Bon</p>
-          <p>2 projets créés</p>
-          <p>www.jean-bon.com</p>
-        </div>
-        <a className="icon is-large" href="">
-          <i className="fa fa-male"></i>
-        </a>
-      </div>
-      <div>
-        <a className="icon" href="">
-          <i className="fa fa-user"></i>
-        </a>
-        <a className="icon" href="">
-          <i className="fa fa-plus"></i>
-        </a>
-        <a className="icon" href="">
-          <i className="fa fa-envelope"></i>
-        </a>
-      </div>
-    </div>
-  );
-};
-
-const Social = () => {
-  return (
-    <div>
-      <a className="icon" href="">
-        <i className="fa fa-twitter"></i>
-      </a>
-      <a className="icon" href="">
-        <i className="fa fa-share-alt"></i>
-      </a>
-      <a className="icon" href="">
-        <i className="fa fa-facebook-official"></i>
-      </a>
-    </div>
-  );
-};
-
 export default class Projet extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentTab : 1
+    };
+    this.clickTab = this.clickTab.bind(this);
+  }
+  chooseTab(i) {
+    switch (i) {
+      case 2:
+        return <Evolution />;
+      case 3:
+        return <Commentaire />;
+      case 1:
+      default:
+        return <Description />;
+    }
+  }
+  clickTab(i) {
+    this.setState({
+      currentTab : i
+    });
+  }
   render() {
+    const currentTab = this.chooseTab(this.state.currentTab);
     return (
       <div>
         <h1 className="title is-1 has-text-centered" >{this.props.nom}</h1>
         <div className="projet-content">
           <div className="projet-left">
-          <figure>
-            <img src={this.props.imageUrl} alt={this.props.nom} />
-          </figure>
-          <h1 className="title is-4 " >{this.props.descriptionCourte}</h1>
-          <Social />
+            <figure>
+              <img src={this.props.imageUrl} alt={this.props.nom} />
+            </figure>
+            <h1 className="title is-4 " >{this.props.descriptionCourte}</h1>
+            <Social />
+          </div>
+          <div className="projet-right">
+            <Stat {...this.props} />
+            <a className="button is-primary is-large">Faire un don</a>
+            <User />
+          </div>
         </div>
-        <div className="projet-right">
-          <Stat {...this.props} />
-          <a className="button is-primary is-large">Faire un don</a>
-          <User />
-        </div>
+        <div className="content">
+          <div className="tabs is-boxed">
+            <ul>
+              <li className={this.state.currentTab === 1 ? "is-active" : "" }>
+                  <a  onClick={() => this.clickTab(1)}>Description</a>
+              </li>
+                <li className={this.state.currentTab === 2 ? "is-active" : "" }>
+                  <a  onClick={() => this.clickTab(2)}>Evolution</a>
+              </li>
+                <li className={this.state.currentTab === 3 ? "is-active" : "" }>
+                  <a  onClick={() => this.clickTab(3)}>Commentaire</a>
+              </li>
+            </ul>
+          </div>
+          {currentTab}
         </div>
       </div>
     );

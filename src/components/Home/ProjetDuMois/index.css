@@ -1,5 +1,6 @@
   .container-projet-mois {
     display: flex;
+    cursor: pointer;
   }
 
   .descrition-projet-mois {
