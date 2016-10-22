@@ -1,5 +1,5 @@
   .apercu-projet {
-    flex: 1 1 200px;
+    width: calc(33.333333% - 20px);
     margin: 10px;
     cursor: pointer;
   }
