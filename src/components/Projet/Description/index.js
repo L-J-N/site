@@ -16,7 +16,7 @@ export default (props) => {
       <h1 className="title is-1" >
         Notre objectif
       </h1>
-      <ReactPlayer className="description-video" url="https://www.youtube.com/watch?v=nITLob098W8" controls="true">
+      <ReactPlayer className="description-video" url="https://www.youtube.com/watch?v=nITLob098W8" controls={true}>
       </ReactPlayer>
       <h1 className="title is-1" >
         Bla bla
