@@ -7,7 +7,6 @@ import Slider from '../Slider';
 
 class App extends Component {
   render() {
-    console.log(this.props.location);
     return (
       <div>
         <section className="hero is-primary">
