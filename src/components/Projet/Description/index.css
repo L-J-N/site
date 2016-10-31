@@ -1,4 +1,14 @@
+.projet-descritption {
+  display: flex;
+  flex-direction: column;
+}
 
-.projet-description {
+.description-image {
+  align-self: center;
+  max-width: 640px;
+  max-height: 360px;
+}
 
+.description-video {
+  align-self: center;
 }
