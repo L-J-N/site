@@ -21,7 +21,7 @@ export default class Categorie extends Component {
   render() {
     return (
       <div className="categorie">
-        <h1 className="title has-text-centered is-1" >
+        <h1 className="title is-1" >
           {this.state.categorie ? this.state.categorie.nom : null}
         </h1>
         <div className="categorie-liste-projet">
@@ -32,7 +32,6 @@ export default class Categorie extends Component {
               );
             }) : null
           }
-
         </div>
       </div>
     );

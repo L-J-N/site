@@ -1,4 +1,11 @@
+.categorie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .categorie-liste-projet {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
 }
