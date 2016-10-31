@@ -1,12 +1,12 @@
-  .apercu-projet {
-    width: calc(33.333333% - 20px);
+.apercu-projet {
+    min-width: calc(320px - 20px);
     margin: 10px;
     cursor: pointer;
   }
-
+/*
   @media all and (min-width: 768px) {
     .apercu-projet {
       width: calc(33.333333% - 20px);
       margin: 10px;
     }
-  }
+  }*/

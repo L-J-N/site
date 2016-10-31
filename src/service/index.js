@@ -7,7 +7,6 @@ function fetchData() {
 export function getCategories() {
   return fetchData().then(data => {
     return data.map(cat => {
-      cat.listeProjet = cat.listeProjet.slice(0, 3);
       return cat;
     });
   });
