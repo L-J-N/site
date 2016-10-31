@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Scroll from 'react-scroll';
 
-import Slider from './Slider';
 import ProjetDuMois from './ProjetDuMois';
 import ProjetPopulaire from './ProjetPopulaire';
 
@@ -24,13 +23,12 @@ export default class Home extends Component {
     this.goSection = this.goSection.bind(this);
   }
   goSection() {
-    Scroll.animateScroll.scrollTo(this.refs.section2.offsetTop);
+    Scroll.animateScroll.scrollTo(this.refs.section2.offsetTop + 200);
   }
   render() {
     return (
       <div >
         <section className="container section1" >
-          <Slider />
           <div className="columns info-bulle" >
             <div className="column" >
               <article className="message is-primary">

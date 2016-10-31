@@ -3,9 +3,11 @@ import './index.css';
 
 import Menu from '../Menu';
 import Footer from '../Footer';
+import Slider from '../Slider';
 
 class App extends Component {
   render() {
+    console.log(this.props.location);
     return (
       <div>
         <section className="hero is-primary">
@@ -15,6 +17,7 @@ class App extends Component {
             </div>
           </div>
         </section>
+        {this.props.location.pathname === "/" ? <Slider /> : null}
         <section className="section">
           <div className="container">
             {React.cloneElement(this.props.children, this.props)}
