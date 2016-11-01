@@ -25,10 +25,35 @@ const Comment = () => {
   );
 };
 
+const PostComment = () => {
+  return (
+    <article className="media">
+      <figure className="media-left">
+        <p className="image is-64x64">
+          <img src="http://placehold.it/128x128" alt="" />
+        </p>
+      </figure>
+      <div className="media-content">
+        <p className="control">
+          <textarea className="textarea" placeholder="Ajouter un commentaire..."></textarea>
+        </p>
+        <nav className="level">
+          <div className="level-left">
+            <div className="level-item">
+              <a className="button is-info">Ajouter un commentaire</a>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </article>
+  );
+};
+
 export default (props) => {
   const comments = Array.apply(null, { length: 10 });
   return (
     <div className="projet-commentaire">
+      <PostComment />
       {comments.map((c, i) => <Comment key={i} />)}
     </div>
   );
