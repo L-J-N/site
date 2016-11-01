@@ -25,6 +25,17 @@ export default class ApercuCategorie extends Component {
       slidesToShow: 3,
       slidesToScroll: 1,
       className: 'apercu-categorie-liste',
+      responsive: [{
+        breakpoint: 1180,
+        settings: {
+          slidesToShow: 2,
+        }
+      }, {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 1,
+        }
+      }]
     };
     return (
       <div className="apercu-categorie">

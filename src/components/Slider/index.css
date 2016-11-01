@@ -8,6 +8,8 @@
 }
 
 .slider-image {
+  height: auto;
   max-height: 50vh;
-  min-width: 100vw;
+  max-width: 100%;
+  min-width: 80vw;
 }
