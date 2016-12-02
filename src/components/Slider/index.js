@@ -36,7 +36,7 @@ export default class Slider extends Component {
             [1, 2, 3, 4, 5, 6].map((i) => {
               return (
                 <figure className="slider-image" key={i}>
-                  <img src={`${process.env.PUBLIC_URL}/image/slider-${i}.png`} alt={i} width="100%" />
+                  <img src={`${process.env.PUBLIC_URL}/image/slider-${i}.jpg`} alt={i} width="100%" />
                 </figure>);
             })
           }
