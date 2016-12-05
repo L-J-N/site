@@ -10,23 +10,15 @@ export default class Categorie extends Component {
     super();
     this.state = {};
   }
-  componentDidMount() {
-    const { categorieId } = this.props.params;
-    getCategorie(categorieId).then((data) => {
-      this.setState({
-        categorie: data
-      });
-    });
-  }
   render() {
     return (
       <div className="categorie">
         <h1 className="title is-1" >
-          {this.state.categorie ? this.state.categorie.nom : null}
+          {this.props.categorie ? this.props.categorie.nom : null}
         </h1>
         <div className="categorie-liste-projet">
           {
-            this.state.categorie ? this.state.categorie.listeProjet.map((projet, i) => {
+            this.props.categorie ? this.props.categorie.listeProjet.map((projet, i) => {
               return (
                 <ApercuProjet key={i} {...projet} />
               );

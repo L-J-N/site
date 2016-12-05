@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ApercuCategorie from './ApercuCategorie';
+import Categorie from './Categorie';
 
 import { getCategories } from '../../service/';
 
@@ -23,7 +23,7 @@ export default class Decouvrir extends Component {
     return (
       <div className="categorie-container" >
         {this.state.categories.map((cat, i) => {
-          return <ApercuCategorie key={i} {...cat} />;
+          return <Categorie key={i} categorie={cat} />;
         }
         )}
       </div>

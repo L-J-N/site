@@ -16,7 +16,13 @@ export default (props) => {
         {percent + ' '}%
       </div>
       <div>
+        {props.montant}&#x20ac; / {props.total}&#x20ac;
+      </div>
+      <div>
         {nbJours} {nbJours > 1 ? "jours restants" : "jour restant"}
+      </div>
+      <div>
+        {props.localite}
       </div>
     </div>
   );

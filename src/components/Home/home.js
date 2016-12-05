@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Scroll from 'react-scroll';
 
 import ProjetDuMois from './ProjetDuMois';
 import ProjetPopulaire from './ProjetPopulaire';
@@ -17,14 +16,6 @@ const lorem = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentes
 
 
 export default class Home extends Component {
-  constructor() {
-    super();
-
-    this.goSection = this.goSection.bind(this);
-  }
-  goSection() {
-    Scroll.animateScroll.scrollTo(this.refs.section2.offsetTop + 200);
-  }
   render() {
     return (
       <div >
@@ -50,11 +41,6 @@ export default class Home extends Component {
                 </div>
               </article>
             </div>
-          </div>
-          <div className="content has-text-centered scroll-button" >
-            <a className="button is-large" onClick={this.goSection} >
-              <i className="fa fa-arrow-down"></i>
-            </a>
           </div>
         </section>
         <section ref="section2" className="section2">

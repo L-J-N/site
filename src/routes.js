@@ -16,7 +16,6 @@ const Routes = (props) => (
         <IndexRoute component={Home} ></IndexRoute>
         <Route path="/decouvrir" component={Decouvrir}></Route>
         <Route path="/demarrer" component={Demarrer}></Route>
-        <Route path="/categorie/:categorieId" component={Categorie}></Route>
         <Route path="/projet/:projectId" component={Projet}></Route>
     </Route>
     <Route path="*" component={NotFound} />
