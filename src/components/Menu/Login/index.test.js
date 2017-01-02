@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Menu from './index';
+import Login from './index';
 
-jest.mock('../../config/firebaseConfig.js');
+jest.mock('../../../config/firebaseConfig.js');
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Menu />, div);
+  ReactDOM.render(<Login />, div);
 });

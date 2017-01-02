@@ -1,7 +1,14 @@
 import React from 'react';
 import { Link, IndexLink } from 'react-router';
+import { Auth, uiConfig, AuthUI } from '../../config/firebaseConfig.js';
+import Login from './Login';
+
 
 export default class Menu extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
   render() {
     return (
       <nav className="nav">
@@ -19,21 +26,12 @@ export default class Menu extends React.Component {
         </div>
         <div className="nav-center">
           <span className="nav-item">
-            <IndexLink className="button is-primary" activeClassName="is-active"  to="/" >
+            <IndexLink className="button is-primary" activeClassName="is-active" to="/" >
               Home
             </IndexLink>
           </span>
         </div>
-        <div className="nav-right nav-menu">
-          <span className="nav-item">
-            <a className="button is-primary" href="#">
-              <span className="icon">
-                <i className="fa fa-user"></i>
-              </span>
-              <span>Log in</span>
-            </a>
-          </span>
-        </div>
+          <Login />
       </nav>
     );
   }

@@ -7,6 +7,7 @@ import Slider from '../Slider';
 
 class App extends Component {
   render() {
+    const { location } = this.props;
     return (
       <div>
         <section className="hero is-primary">
@@ -16,7 +17,7 @@ class App extends Component {
             </div>
           </div>
         </section>
-        {this.props.location.pathname === "/" ? <Slider /> : null}
+        {location && location.pathname === "/" ? <Slider /> : null}
         <section className="section">
           <div className="container">
             {React.cloneElement(this.props.children, this.props)}
