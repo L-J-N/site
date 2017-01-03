@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import './index.css';
 
-import Menu from '../Menu';
-import Footer from '../Footer';
-import Slider from '../Slider';
+import Menu from '../fragments/Menu';
+import Footer from '../fragments/Footer';
+import Slider from '../components/Slider';
 
 class App extends Component {
   render() {

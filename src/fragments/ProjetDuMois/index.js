@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import ProgressBar from '../../ProgressBar';
+import ProgressBar from '../../components/ProgressBar';
 
 import './index.css';
 

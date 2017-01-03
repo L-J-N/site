@@ -2,13 +2,12 @@
 import React from 'react';
 import { Router, Route, IndexRoute } from 'react-router';
 
-import NotFound from './components/NotFound';
-import App from './components/App';
-import Home from './components/Home';
-import Decouvrir from './components/Decouvrir';
-import Categorie from './components/Decouvrir/Categorie';
-import Demarrer from './components/Demarrer';
-import Projet from './components/Projet';
+import NotFound from './pages/NotFound';
+import App from './pages/App';
+import Home from './pages/Home';
+import Decouvrir from './pages/Decouvrir';
+import Demarrer from './pages/Demarrer';
+import Projet from './pages/Projet';
 
 const Routes = (props) => (
   <Router {...props}>

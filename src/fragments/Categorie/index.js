@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ApercuProjet from '../../ApercuProjet';
+import ApercuProjet from '../../components/ApercuProjet';
 
-import { getCategorie } from '../../../service/';
+import { getCategorie } from '../../service/';
 
 import './index.css';
 

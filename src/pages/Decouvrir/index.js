@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Categorie from './Categorie';
+import Categorie from '../../fragments/Categorie';
 
 import { getCategories } from '../../service/';
 

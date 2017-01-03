@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import ProjetDuMois from './ProjetDuMois';
-import ProjetPopulaire from './ProjetPopulaire';
+import ProjetDuMois from '../../fragments/ProjetDuMois';
+import ProjetPopulaire from '../../fragments/ProjetPopulaire';
 
 import './index.css';
 

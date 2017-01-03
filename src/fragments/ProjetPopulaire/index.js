@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ApercuProjet from '../../ApercuProjet';
+import ApercuProjet from '../../components/ApercuProjet';
 
 import './index.css';
 

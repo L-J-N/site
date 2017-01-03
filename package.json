@@ -30,7 +30,9 @@
     "eject": "react-scripts eject",
     "deploy": "npm run build && gh-pages -d build"
   },
-  "Jest" : {
-    "setupFiles": ["./tests/index.js"]
+  "Jest": {
+    "setupFiles": [
+      "./tests/index.js"
+    ]
   }
 }
