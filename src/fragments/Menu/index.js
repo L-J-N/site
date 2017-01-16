@@ -1,6 +1,5 @@
 import React from 'react';
 
-import UserService from '../../service/UserService';
 import { Database, Auth, uiConfig, AuthUI } from '../../config/firebaseConfig.js';
 import Button from '../../components/Button';
 import Link from '../../components/Link';
