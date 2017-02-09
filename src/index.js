@@ -8,13 +8,16 @@ import 'whatwg-fetch';
 // import { browserHistory } from 'react-router';
 import { HashHistory } from 'react-router';
 
-import '../node_modules/bulma/css/bulma.css';
-
 import Routes from './routes';
 
+import 'grommet/grommet.min.css';
 import './index.css';
 
+const App = () => (
+    <Routes history={HashHistory} />
+);
+
 ReactDOM.render(
-  <Routes history={HashHistory} />,
+  <App />,
   document.getElementById('root')
 );

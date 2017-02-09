@@ -1,36 +1,27 @@
 import React, { Component } from 'react';
+
+import App from 'grommet/components/App';
+import Hero from 'grommet/components/Hero';
+
+import Menu from '../components/Menu';
+import Footer from '../components/Footer';
+
 import './index.css';
 
-import Menu from '../fragments/Menu';
-import Footer from '../fragments/Footer';
-import Slider from '../components/Slider';
+class Site extends Component {
 
-class App extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
-    const { location } = this.props;
     return (
-      <div>
-        <section className="hero is-primary">
-          <div className="hero-head" >
-            <div className="container">
-              <Menu />
-            </div>
-          </div>
-        </section>
-        {location && location.pathname === "/" ? <Slider /> : null}
-        <section className="section">
-          <div className="container">
-            {React.cloneElement(this.props.children, this.props)}
-          </div>
-        </section>
-        <footer className="footer">
-          <div className="container">
-            <Footer />
-          </div>
-        </footer>
-      </div>
-    );
+      <App centered={false}>
+          <Menu />
+          <Hero size="small" backgroundImage={`${process.env.PUBLIC_URL}/image/slider-1.jpg`} />
+          <Footer />
+      </App>);
+
   }
 }
 
-export default App;
+export default Site;
