@@ -6,8 +6,6 @@ import Hero from 'grommet/components/Hero';
 import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
-import './index.css';
-
 class Site extends Component {
 
   constructor(props) {
@@ -16,9 +14,10 @@ class Site extends Component {
   render() {
     return (
       <App centered={false}>
-          <Menu />
-          <Hero size="small" backgroundImage={`${process.env.PUBLIC_URL}/image/slider-1.jpg`} />
-          <Footer />
+        <Menu />
+        <Hero size="small" backgroundImage={`${process.env.PUBLIC_URL}/image/slider-1.jpg`} />
+        {React.cloneElement(this.props.children, this.props)}
+        <Footer />
       </App>);
 
   }
