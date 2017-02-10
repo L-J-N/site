@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 import Footer from 'grommet/components/Footer';
 import Box from 'grommet/components/Box';
 import Anchor from 'grommet/components/Anchor';
-import SocialShare from 'grommet/components/SocialShare';
+import TwitterIcon from 'grommet/components/icons/base/SocialTwitter';
+import FaceBookIcon from 'grommet/components/icons/base/SocialFacebook';
 
 import Style from '../../utils/style';
 
@@ -21,9 +22,8 @@ export default class AppFooter extends Component {
                 <Anchor href="#" primary={true}>Mention legal</Anchor>
                 <Box pad="small" />
                 <Box flex="grow" direction="row" justify="end">
-                  <SocialShare type="twitter" />
-                  <SocialShare type="facebook" />
-                  <SocialShare type="email" />
+                  <Anchor href="#" primary={true} icon={<TwitterIcon />}/>
+                  <Anchor href="#" primary={true} icon={<FaceBookIcon />}/>
                 </Box>
           </Box>
       </Footer>
