@@ -1,10 +1,13 @@
 import React, { Component } from 'react';
 
-import Footer from 'grommet/components/Footer';
-import Box from 'grommet/components/Box';
-import Anchor from 'grommet/components/Anchor';
-import TwitterIcon from 'grommet/components/icons/base/SocialTwitter';
-import FaceBookIcon from 'grommet/components/icons/base/SocialFacebook';
+import {
+  Box,
+  Footer,
+  Anchor,
+  Search,
+  TwitterIcon,
+  FaceBookIcon
+} from '../index.js';
 
 import Style from '../../utils/style';
 

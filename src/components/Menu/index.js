@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 
-import Box from 'grommet/components/Box';
-import Header from 'grommet/components/Header';
-import Anchor from 'grommet/components/Anchor';
-import Search from 'grommet/components/Search';
-import Menu from 'grommet/components/Menu';
-import LoginIcon from 'grommet/components/icons/base/User';
+import {
+  Box,
+  Header,
+  Anchor,
+  Search,
+  Menu,
+  LoginIcon
+} from '../index.js';
 
 import Style from '../../utils/style';
 

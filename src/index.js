@@ -10,7 +10,7 @@ import { HashHistory } from 'react-router';
 
 import Routes from './routes';
 
-import 'grommet/grommet.min.css';
+import 'grommet/grommet-hpinc.min.css';
 import './index.css';
 
 const App = () => (
