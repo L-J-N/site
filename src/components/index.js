@@ -15,6 +15,9 @@ import Search from 'grommet/components/Search';
 import Menu from 'grommet/components/Menu';
 import Footer from 'grommet/components/Footer';
 import Card from 'grommet/components/Card';
+import Table from 'grommet/components/Table';
+import TableHeader from 'grommet/components/TableHeader';
+import TableRow from 'grommet/components/TableRow';
 import TwitterIcon from 'grommet/components/icons/base/SocialTwitter';
 import FaceBookIcon from 'grommet/components/icons/base/SocialFacebook';
 import LoginIcon from 'grommet/components/icons/base/User';
@@ -36,6 +39,9 @@ export {
   Menu,
   Footer,
   Card,
+  Table,
+  TableHeader,
+  TableRow,
   TwitterIcon,
   FaceBookIcon,
   LoginIcon,

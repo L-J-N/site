@@ -11,10 +11,16 @@ class Site extends Component {
     super(props);
   }
   render() {
+    const style = {
+      minHeight: "100vh"
+    };
+
     return (
       <App centered={false}>
         <Menu />
+        <div style={style}>
         {React.cloneElement(this.props.children, this.props)}
+        </div>
         <Footer />
       </App>);
 

@@ -25,6 +25,7 @@ export default class AppMenu extends Component {
           <Menu label="Menu" inline={true} direction="row" flex="grow">
             <Anchor label="Découvrir" path="/decouvrir" />
             <Anchor label="Démarrer" path="/demarrer" />
+            <Anchor label="Admin" path="/admin" />
             <Anchor label="Home" path="/" />
           </Menu>
           <Box pad="small" flex="grow" >

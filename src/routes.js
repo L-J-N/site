@@ -5,6 +5,7 @@ import { Router, Route, IndexRoute } from 'react-router';
 import App from './App';
 import Home from './pages/Home';
 import Decouvrir from './pages/Decouvrir';
+import Admin from './pages/Admin';
 
 const Routes = (props) => (
   <Router {...props}>
@@ -12,6 +13,7 @@ const Routes = (props) => (
         <IndexRoute component={Home} ></IndexRoute>
         <Route path="/decouvrir" component={Decouvrir}></Route>
         <Route path="/demarrer" component={Home}></Route>
+        <Route path="/admin" component={Admin}></Route>
     </Route>
   </Router>
 );
