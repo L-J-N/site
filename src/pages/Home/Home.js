@@ -12,7 +12,7 @@ import {
 } from '../../components';
 
 import  ProjetDuMois from '../../components/ProjetDuMois';
-import  ProjetCard from '../../components/ProjetCard';
+import  Categorie from '../../components/Categorie';
 
 const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi.";
 
@@ -50,20 +50,7 @@ export default class Home extends Component {
         <Section pad="medium">
           <ProjetDuMois {...this.props.projetDuMois} />
        </Section>
-         <Section pad="medium">
-           <Heading align="center" >Projets populaires</Heading>
-       { this.props.listeProjet ?
-         <Box pad={{horizontal: "large"}} full="horizontal">
-          <Columns size="medium"
-                   justify="center"
-                   masonry={true}
-                   maxCount={3}
-                   responsive={true}>
-          {this.props.listeProjet.map((p, i) => <ProjetCard key={i} {...p} />)}
-        </Columns>
-       </Box>
-        : null }
-         </Section>
+       <Categorie title="Projets populaires" liste={this.props.listeProjet} />
       </div>
     );
   }

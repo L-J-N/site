@@ -23,8 +23,8 @@ export default class AppMenu extends Component {
              pad={{ horizontal: 'medium' }}
              flex="grow">
           <Menu label="Menu" inline={true} direction="row" flex="grow">
-            <Anchor label="Démarrer" path="/demarrer" />
             <Anchor label="Découvrir" path="/decouvrir" />
+            <Anchor label="Démarrer" path="/demarrer" />
             <Anchor label="Home" path="/" />
           </Menu>
           <Box pad="small" flex="grow" >
