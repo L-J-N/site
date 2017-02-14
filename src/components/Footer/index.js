@@ -4,7 +4,6 @@ import {
   Box,
   Footer,
   Anchor,
-  Search,
   TwitterIcon,
   FaceBookIcon
 } from '../index.js';

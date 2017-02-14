@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 
 import { Box, Image, Paragraph, Heading, Responsive } from '../index.js';
 

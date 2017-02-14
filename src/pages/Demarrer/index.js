@@ -69,6 +69,8 @@ export default class Demarrer extends Component {
       errors : errors
     });
 
+    console.log(this.state);
+
    return false;
   }
   onChange(e) {

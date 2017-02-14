@@ -6,10 +6,6 @@ import Menu from '../components/Menu';
 import Footer from '../components/Footer';
 
 class Site extends Component {
-
-  constructor(props) {
-    super(props);
-  }
   render() {
     const style = {
       minHeight: "100vh"
