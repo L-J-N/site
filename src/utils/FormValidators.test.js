@@ -31,6 +31,16 @@ it('isRequired gère le cas ok', () => {
   expect(err).to.be.undefined;
 });
 
+it('isRequired gère le cas false', () => {
+  const err = isRequired(false);
+  expect(err).to.be.equals('Ce champ est obligatoire');
+});
+
+it('isRequired gère le cas true', () => {
+  const err = isRequired(true);
+  expect(err).to.be.undefined;
+});
+
 it('isMail gère le null', () => {
   const err = isMail(null);
   expect(err).to.be.equals('Le format du mail n\'est pas correct');

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { Box, Image, Paragraph, Heading, Responsive } from '../index.js';
 
@@ -29,7 +29,7 @@ export default class ProjetDuMois extends Component {
   }
 
   onClick (e) {
-    console.log(e);
+    this.context.router.push(`/projet/${this.props.id}`);
   }
 
   render() {
@@ -54,3 +54,7 @@ export default class ProjetDuMois extends Component {
     );
   }
 }
+
+ProjetDuMois.contextTypes = {
+  router: PropTypes.object,
+};

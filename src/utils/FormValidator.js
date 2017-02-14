@@ -1,7 +1,8 @@
 const isRequired = (value) => {
   if (value === undefined || value === null
     || (typeof(value) === "string" && value.trim() === "")
-    || (typeof(value) === "number" && value === 0)) {
+    || (typeof(value) === "number" && value === 0)
+    || (typeof(value) === "boolean" && value === false)) {
     return 'Ce champ est obligatoire';
   }
 };

@@ -25,10 +25,17 @@ import FormField from 'grommet/components/FormField';
 import Select from 'grommet/components/Select';
 import NumberInput from 'grommet/components/NumberInput';
 import TextInput from 'grommet/components/TextInput';
+import CheckBox from 'grommet/components/CheckBox';
+import Split from 'grommet/components/Split';
+import SocialShare from 'grommet/components/SocialShare';
+import Value from 'grommet/components/Value';
+import Tabs from 'grommet/components/Tabs';
+import Tab from 'grommet/components/Tab';
 import TwitterIcon from 'grommet/components/icons/base/SocialTwitter';
 import FaceBookIcon from 'grommet/components/icons/base/SocialFacebook';
 import LoginIcon from 'grommet/components/icons/base/User';
 import AddCircleIcon from 'grommet/components/icons/base/AddCircle';
+import MoneyIcon from 'grommet/components/icons/base/Money';
 
 export {
   Responsive,
@@ -56,9 +63,16 @@ export {
   FormField,
   Select,
   TextInput,
+  CheckBox,
   NumberInput,
+  Split,
+  SocialShare,
+  Value,
+  Tabs,
+  Tab,
   TwitterIcon,
   FaceBookIcon,
   LoginIcon,
   AddCircleIcon,
+  MoneyIcon,
 };

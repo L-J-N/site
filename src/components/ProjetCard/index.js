@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 import { Card, Image, Paragraph } from '../index.js';
 
@@ -10,7 +10,7 @@ export default class ProjetCard extends Component {
     this.onClick = this.onClick.bind(this);
   }
   onClick (e) {
-    console.log(e);
+     this.context.router.push(`/projet/${this.props.id}`);
   }
   render() {
 
@@ -34,3 +34,7 @@ export default class ProjetCard extends Component {
     );
   }
 }
+
+ProjetCard.contextTypes = {
+  router: PropTypes.object,
+};

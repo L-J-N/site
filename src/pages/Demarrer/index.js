@@ -12,6 +12,7 @@ import {
   Select,
   TextInput,
   NumberInput,
+  CheckBox,
 } from '../../components';
 
 import { isRequired, isTelephone, isMail } from '../../utils/FormValidator';
@@ -39,6 +40,7 @@ export default class Demarrer extends Component {
     this.submit = this.submit.bind(this);
     this.onChange = this.onChange.bind(this);
     this.onSelectChange = this.onSelectChange.bind(this);
+    this.onCheckBoxChange = this.onCheckBoxChange.bind(this);
   }
 
   submit(e) {
@@ -56,6 +58,7 @@ export default class Demarrer extends Component {
     errors.delai = isRequired(projet.delai);
     errors.email = isRequired(projet.email);
     errors.telephone = isRequired(projet.telephone);
+    errors.cgu = isRequired(projet.cgu);
 
     if (!errors.telephone) {
       errors.telephone = isTelephone(projet.telephone);
@@ -83,6 +86,13 @@ export default class Demarrer extends Component {
    onSelectChange(e) {
     const projet = this.state.projet;
     projet[e.target.name] =  e.value;
+    this.setState({
+      projet : projet
+    });
+  }
+  onCheckBoxChange(e) {
+    const projet = this.state.projet;
+    projet[e.target.name] =  e.target.checked;
     this.setState({
       projet : projet
     });
@@ -151,6 +161,11 @@ export default class Demarrer extends Component {
           <FormField label="Téléphone" htmlFor="telephone" error={errors.telephone} >
             <TextInput id="telephone" name="telephone" onDOMChange={this.onChange} value={projet.telephone} />
           </FormField>
+           <FormField htmlFor="cgu" error={errors.cgu}  >
+            <CheckBox id="cgu"
+              name="cgu" onChange={this.onCheckBoxChange} checked={projet.cgu}
+              label="J'ai lu et j'accepte les conditions générales" />
+            </FormField>
         </FormFields>
         <Footer pad={{"vertical": "medium"}}>
           <Button label='Soummettre'

@@ -8,6 +8,7 @@ import Decouvrir from './pages/Decouvrir';
 import Demarrer from './pages/Demarrer';
 import Admin from './pages/Admin';
 import NouveauProjet from './pages/NouveauProjet';
+import Projet from './pages/Projet';
 
 const Routes = (props) => (
   <Router {...props}>
@@ -17,6 +18,7 @@ const Routes = (props) => (
         <Route path="/demarrer" component={Demarrer}></Route>
         <Route path="/admin" component={Admin}></Route>
         <Route path="/nouveau" component={NouveauProjet}></Route>
+        <Route path="/projet/:projectId" component={Projet}></Route>
     </Route>
   </Router>
 );
