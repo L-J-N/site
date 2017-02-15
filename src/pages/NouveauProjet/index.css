@@ -1,10 +1,25 @@
-#megadraft button {
-  border: none !important;
-  min-width: 70px !important;
-  color: white !important;
+.md-sb-button {
+    background: none  !important;
+    border: none  !important;
+    color: #6D6D6D  !important;
+    cursor: pointer !important;
+    height: 30px !important;
+    width: 30px !important;
+    border-radius: 15px !important;
+    font-weight: bold !important;
+    font-size: 20px !important;
+    margin-right: 2px !important;
+    margin-left: 5px !important;
+    text-align: center !important;
+    -webkit-transition: all 0.2s ease !important;
+    transition: all 0.2s ease !important;
+    min-width: 0  !important;
+    border: 0  !important;
+    border-radius: 0 !important;
+    padding: 0 !important;
 }
 
-#megadraft button:focus {
-  border-color: none !important;
-  box-shadow: none !important;
+.md-sb-button:focus {
+  border-color: 0 !important;
+  box-shadow: 0 !important;
 }

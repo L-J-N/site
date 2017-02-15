@@ -3,11 +3,16 @@ import React, { Component } from 'react';
 import { convertToRaw } from 'draft-js';
 import draftToHtml from 'draftjs-to-html';
 import draftToMarkdown from 'draftjs-to-markdown';
+import '../../../node_modules/medium-draft/lib/index.css';
+import {
+  Editor,
+  createEditorState,
+} from 'medium-draft';
 
-import { Editor } from 'react-draft-wysiwyg';
-import '../../../node_modules/react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
+import './index.css';
 
 import {
+  Section,
   Box,
   Button,
 } from '../../components';
@@ -17,7 +22,7 @@ export default class NouveauProjet extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      editorState: null
+      editorState: createEditorState(), // for empty content
     };
     this.onChange = this.onChange.bind(this);
     this.toHtml = this.toHtml.bind(this);
@@ -47,27 +52,31 @@ export default class NouveauProjet extends Component {
   }
 
   render() {
+
+    this.sideButtons = [];
+
     return (
-      <Box colorIndex="light-2" pad="large">
-        <Editor
-          toolbarOnFocus
-          editorState={this.state.editorState}
-          onEditorStateChange={this.onChange}
-          toolbar={this.toolbar}
-          placeholder="Entrez votre texte ici"
-          />
-        <Box direction="row" colorIndex="light-1" pad="large">
-          <Button label='Html'
-            primary={true}
-            onClick={this.toHtml} />
-          <Button label='Markdown'
-            primary={true}
-            onClick={this.toMd} />
-          <Button label='json'
-            primary={true}
-            onClick={this.toJson} />
+      <Section pad={ { horizontal: "xlarge", vertical: "medium" }} colorIndex="light-2" full="vertical"   >
+        <Box separator="all" >
+          <Editor
+            editorState={this.state.editorState}
+            onChange={this.onChange}
+            toolbar={this.toolbar}
+            placeholder="Entrez votre texte ici"
+            />
+          <Box direction="row" colorIndex="light-1" pad="large">
+            <Button label='Html'
+              primary={true}
+              onClick={this.toHtml} />
+            <Button label='Markdown'
+              primary={true}
+              onClick={this.toMd} />
+            <Button label='json'
+              primary={true}
+              onClick={this.toJson} />
           </Box>
         </Box>
-        );
+      </Section>
+    );
   }
 }

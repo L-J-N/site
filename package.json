@@ -14,13 +14,14 @@
   },
   "dependencies": {
     "classnames": "^2.2.5",
+    "draft-convert": "^1.4.0",
     "draftjs-to-html": "^0.6.3",
     "draftjs-to-markdown": "^0.3.2",
     "grommet": "^1.2.1",
     "grommet-addons": "^0.3.0",
+    "medium-draft": "^0.4.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-draft-wysiwyg": "^1.7.4",
     "react-router": "^2.8.1",
     "whatwg-fetch": "^1.0.0"
   },
