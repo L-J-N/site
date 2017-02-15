@@ -1,0 +1,10 @@
+#megadraft button {
+  border: none !important;
+  min-width: 70px !important;
+  color: white !important;
+}
+
+#megadraft button:focus {
+  border-color: none !important;
+  box-shadow: none !important;
+}

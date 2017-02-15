@@ -19,7 +19,6 @@ class Site extends Component {
         </div>
         <Footer />
       </App>);
-
   }
 }
 
