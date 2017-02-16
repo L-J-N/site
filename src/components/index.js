@@ -36,6 +36,9 @@ import FaceBookIcon from 'grommet/components/icons/base/SocialFacebook';
 import LoginIcon from 'grommet/components/icons/base/User';
 import AddCircleIcon from 'grommet/components/icons/base/AddCircle';
 import MoneyIcon from 'grommet/components/icons/base/Money';
+import ImageIcon from 'grommet/components/icons/base/Image';
+import PlayIcon from 'grommet/components/icons/base/CirclePlay';
+import VideoIcon from 'grommet/components/icons/base/Video';
 
 export {
   Responsive,
@@ -75,4 +78,7 @@ export {
   LoginIcon,
   AddCircleIcon,
   MoneyIcon,
+  ImageIcon,
+  PlayIcon,
+  VideoIcon
 };

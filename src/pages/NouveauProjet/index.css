@@ -1,25 +1,62 @@
-.md-sb-button {
-    background: none  !important;
-    border: none  !important;
-    color: #6D6D6D  !important;
-    cursor: pointer !important;
-    height: 30px !important;
-    width: 30px !important;
-    border-radius: 15px !important;
-    font-weight: bold !important;
-    font-size: 20px !important;
-    margin-right: 2px !important;
-    margin-left: 5px !important;
-    text-align: center !important;
-    -webkit-transition: all 0.2s ease !important;
-    transition: all 0.2s ease !important;
-    min-width: 0  !important;
-    border: 0  !important;
-    border-radius: 0 !important;
-    padding: 0 !important;
+.editor {
+  background: #fff;
+  font-family: 'Georgia', serif;
+  font-size: 14px;
+  padding: 25px;
 }
 
-.md-sb-button:focus {
-  border-color: 0 !important;
-  box-shadow: 0 !important;
+.editor-editor {
+  border-top: 1px solid #ddd;
+  cursor: text;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.editor-editor .public-DraftEditorPlaceholder-root,
+.editor-editor .public-DraftEditor-content {
+  margin: 0 -15px -15px;
+  padding: 15px;
+}
+
+.editor-editor .public-DraftEditor-content {
+  min-height: 200px;
+}
+
+
+.editor-menu {
+  display: flex;
+}
+
+.editor-media > * {
+  margin: 0 2px;
+}
+
+.editor-menu > :first-child {
+  border-right: 1px solid #ddd;
+  margin-right: 10px;
+}
+
+.editor-styleButton {
+  color: #999;
+  cursor: pointer;
+  margin-right: 16px;
+  padding: 2px 0;
+  display: inline-block;
+}
+
+.editor-activeButton {
+  color: #5890ff;
+}
+
+.editor-editor .editor-blockquote {
+  border-left: 5px solid #eee;
+  color: #666;
+  font-family: 'Hoefler Text', 'Georgia', serif;
+  font-style: italic;
+  margin: 16px 0;
+  padding: 10px 20px;
+}
+
+.editor-editor .editor-center {
+  text-align: center;
 }
