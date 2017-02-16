@@ -13,9 +13,11 @@ class Site extends Component {
 
     return (
       <App centered={false}>
+        <Menu />
         <div style={style}>
         {React.cloneElement(this.props.children, this.props)}
         </div>
+        <Footer />
       </App>);
   }
 }
