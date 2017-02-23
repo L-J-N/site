@@ -1,4 +1,5 @@
 import React from 'react';
+import Video from './Video';
 
 const Audio = (props) => {
   return <audio controls src={props.src} />;
@@ -8,9 +9,6 @@ const Image = (props) => {
   return <img src={props.src} alt={props.src} />;
 };
 
-const Video = (props) => {
-  return <video controls src={props.src} />;
-};
 
 const Media = (props) => {
   const entity = props.contentState.getEntity(

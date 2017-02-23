@@ -18,7 +18,6 @@ import {
   Button,
   Anchor,
   ImageIcon,
-  PlayIcon,
   VideoIcon
 } from '../../components';
 
@@ -28,8 +27,8 @@ export default class NouveauProjet extends Component {
     super(props);
     this.state = {
       editorState: this.createEditorState(),
-      urlValue : '',
-      urlType : ''
+      urlValue: '',
+      urlType: ''
     };
 
     this.focus = () => this.refs.editor.focus();
@@ -43,7 +42,6 @@ export default class NouveauProjet extends Component {
     this.addMedia = this.addMedia.bind(this);
     this.onClickImage = this.onClick.bind(this, 'image');
     this.onClickVideo = this.onClick.bind(this, 'video');
-    this.onClickAudio = this.onClick.bind(this, 'audio');
   }
 
   createEditorState(content = null, decorators = null) {
@@ -148,7 +146,6 @@ export default class NouveauProjet extends Component {
               <div className="editor-media">
                 <a onClick={this.onClickImage}><ImageIcon size="small" /></a>
                 <a onClick={this.onClickVideo}><VideoIcon size="small" /></a>
-                <a onClick={this.onClickAudio}><PlayIcon size="small" /></a>
               </div>
             </div>
             <div className="editor-editor" onClick={this.focus} >
