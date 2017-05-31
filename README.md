@@ -1,11 +1,4 @@
-
-Projet
-  -> bouton Don fixed
-  -> localité
-  -> somme / somme totale
-
-Admin -> liste avec status
-      -> creation /edition
-
-Categorie -> tout direct champs de recherche
+npm install -g yarn
+yarn install
+yarn start
 

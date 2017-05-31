@@ -1,32 +1,35 @@
-function fetchData() {
-  return fetch(process.env.PUBLIC_URL + '/data/categorie.json').then((response) => {
+const url = '/api/projets/v1';
+
+const proj = {
+  "nom": "test",
+  "createur": { id: 1},
+  "urlsPiecesJointes": null,
+  "typeProjet": "ENTREPRISE",
+  "descriptionCourte": "coucou",
+  "sommeDemandee": 30000,
+  "sommeRecolte": 10000,
+  "delaiRecolte": 30,
+  "adresse": null
+};
+
+function getProjets(statut) {
+  return fetch(`${url}?statut=${statut}`).then((response) => {
     return response.json();
   });
 }
 
-export function getCategories() {
-  return fetchData().then(data => {
-    return data.map(cat => {
-      return cat;
-    });
+function createProjet(projet) {
+  return fetch(url, {
+    method: "POST", body: JSON.stringify(proj), headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((response) => {
+    return response.json();
   });
 }
 
-export function getCategorie(id) {
-  return fetchData().then(data => {
-    return data.filter(data => {
-      return data.id === parseInt(id, 10);
-    })[0];
-  });
-}
+createProjet();
 
-export function getProjet(id) {
-  return fetchData().then(data => {
-    return data.reduce((flat, toflatten) => {
-      return flat.concat(toflatten.listeProjet);
-    }, [])
-      .filter(projet => {
-        return projet.id === id;
-      })[0];
-  });
+export {
+  getProjets
 }
