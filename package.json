@@ -2,16 +2,16 @@
   "name": "site",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://localhost:8080",
   "dependencies": {
     "glamor": "^2.20.25",
-    "react": "^15.5.4",
-    "react-dom": "^15.5.4",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-router-dom": "^4.1.1",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "react-scripts": "0.9.x"
   },
   "devDependencies": {
-    "react-scripts": "1.0.7"
+    "eslint": "^4.2.0"
   },
   "scripts": {
     "start": "react-scripts start",
