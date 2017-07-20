@@ -37,7 +37,7 @@ export default class Demarrer extends Component {
         pj1: "",
         pj2: "",
         pj3: "",
-        tel: "",
+        telephone: "",
       },
       errors: {}
     };
@@ -122,7 +122,6 @@ export default class Demarrer extends Component {
           <Select name="type" label="Type de projet" value={projet.type} onChange={this.onChange} options={optionsType} />
           <Select name="secteur" label="Secteur d'activité" value={projet.secteur} onChange={this.onChange} options={optionsSecteur} />
           <Input name="description" label="Description courte" value={projet.description} onChange={this.onChange} />
-          <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange} />
           <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange} />
           <Input name="somme" label="Somme" value={projet.somme} onChange={this.onChange} type="number" />
           <Input name="delai" label="Délai" value={projet.delai} onChange={this.onChange} type="number" />
