@@ -8,23 +8,29 @@ import Home from './Pages/Home';
 import Demarrer from './Pages/demarrer';
 import Decouvrir from './Pages/decouvrir';
 
+import {desktopSize} from './global-css';
+
+
 const app = css({
-  display: 'flex',
-  flexDirection: 'column',
-  minHeight: '100vh',
-  fontFamily: fontFace({
-    fontFamily: 'Roboto',
-    fontStyle: 'normal',
-    fontWeight: 400,
-    src: "local('Open Sans'), local('OpenSans'), url('https://fonts.googleapis.com/css?family=Roboto')",
-  })
-})
-;
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    fontFamily: fontFace({
+      fontFamily: 'Roboto',
+      fontStyle: 'normal',
+      fontWeight: 400,
+      src: "local('Open Sans'), local('OpenSans'), url('https://fonts.googleapis.com/css?family=Roboto')",
+    })
+  });
 
 const content = css({
   display: 'flex',
   flex: '1',
-  padding: '3rem 1.5rem'
+  padding: '3rem 1.5rem',
+  maxWidth: desktopSize,
+  width: desktopSize,
+  marginRight: 'auto',
+  marginLeft: 'auto'
 });
 
 class App extends Component {

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {isRequired, isTelephone, isMail} from '../../utils/FormValidator';
 
-import { Input, Select } from '../../Component/Forms';
+import { Input, Select, Submit } from '../../Component/Forms';
 
 
 export default class Demarrer extends Component {
@@ -101,22 +101,22 @@ export default class Demarrer extends Component {
       <div>
         <h1>Démarrer votre projet</h1>
         <form onSubmit={this.submit}>
-          <Input name="nom" label="Nom du projet" value={projet.nom} onChange={this.onChange} />
-          <Select name="type" label="Type de projet" value={projet.type} onChange={this.onChange} options={optionsType} />
-          <Select name="secteur" label="Secteur d'activité" value={projet.secteur} onChange={this.onChange} options={optionsSecteur} />
-          <Input name="description" label="Description courte" value={projet.description} onChange={this.onChange} />
-          <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange} />
-          <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange} />
-          <Input name="somme" label="Somme" value={projet.somme} onChange={this.onChange} type="number" />
-          <Input name="delai" label="Délai" value={projet.delai} onChange={this.onChange} type="number" />
-          <Input name="siret" label="Siret (si entreprise)" value={projet.siret} onChange={this.onChange} />
-          <Input name="pj1" label="Piece Jointe 1" help="facultatif" value={projet.pj1} onChange={this.onChange} type="file" />
-          <Input name="pj2" label="Piece Jointe 2" help="facultatif" value={projet.pj2} onChange={this.onChange} type="file" />
-          <Input name="pj3" label="Piece Jointe 3" help="facultatif" value={projet.pj3} onChange={this.onChange} type="file" />
-          <Input name="email" label="Email" value={projet.email} onChange={this.onChange} type="email" />
-          <Input name="telephone" label="Téléphone" value={projet.telephone} onChange={this.onChange} type="tel"/>
-          <Input name="cgu" label="J'ai lu et j'accepte les conditions générales" value={projet.cgu} onChange={this.onCheckBoxChange} type="checkbox"/>
-          <input type="submit" value="Soumettre"/>
+          <Input name="nom" label="Nom du projet" value={projet.nom} onChange={this.onChange} error={errors.nom} />
+          <Select name="type" label="Type de projet" value={projet.type} onChange={this.onChange} options={optionsType} error={errors.type} />
+          <Select name="secteur" label="Secteur d'activité" value={projet.secteur} onChange={this.onChange} options={optionsSecteur} error={errors.secteur} />
+          <Input name="description" label="Description courte" value={projet.description} onChange={this.onChange}  error={errors.description} />
+          <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange}  error={errors.localite} />
+          <Input name="localite" label="Localité" value={projet.localite} onChange={this.onChange}  error={errors.localite} />
+          <Input name="somme" label="Somme" value={projet.somme} onChange={this.onChange} type="number"  error={errors.somme} />
+          <Input name="delai" label="Délai" value={projet.delai} onChange={this.onChange} type="number"  error={errors.delai} />
+          <Input name="siret" label="Siret (si entreprise)" value={projet.siret} onChange={this.onChange} error={errors.siret} />
+          <Input name="pj1" label="Piece Jointe 1" help="facultatif" value={projet.pj1} onChange={this.onChange}  error={errors.pj1} type="file" />
+          <Input name="pj2" label="Piece Jointe 2" help="facultatif" value={projet.pj2} onChange={this.onChange}  error={errors.pj2} type="file" />
+          <Input name="pj3" label="Piece Jointe 3" help="facultatif" value={projet.pj3} onChange={this.onChange}  error={errors.pj3}type="file" />
+          <Input name="email" label="Email" value={projet.email} onChange={this.onChange}  error={errors.email} type="email" />
+          <Input name="telephone" label="Téléphone" value={projet.telephone} onChange={this.onChange}  error={errors.telephone} type="tel"/>
+          <Input name="cgu" label="J'ai lu et j'accepte les conditions générales" value={projet.cgu} onChange={this.onCheckBoxChange}  error={errors.cgu} type="checkbox"/>
+          <Submit value="Soumettre"/>
         </form>
       </div>
     );

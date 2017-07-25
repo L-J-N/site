@@ -1,6 +1,10 @@
+// color
 const primaryColor = '#55acee';
 const secondaryColor = '#7a7a7a';
 const secondaryColorHover = 'rgb(82, 79, 79)';
+
+// size
+const desktopSize = '1344px';
 
 const a = {
   color: primaryColor,
@@ -12,10 +16,10 @@ const a = {
   }
 };
 
-
 export {
   a,
   primaryColor,
   secondaryColor,
   secondaryColorHover,
+  desktopSize
 }
