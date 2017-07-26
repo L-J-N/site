@@ -1,25 +1,8 @@
 import React, {Component} from 'react';
 import {isRequired, isTelephone, isMail} from '../../utils/FormValidator';
 
-const Input = (props) => {
-  const type = props.type || "text";
-  return (
-    <label>
-      {props.label}:
-      { props.help ? <i>{props.help}</i> : null }
-      <input type={type} name={props.name} value={props.value} onChange={props.onChange}/>
-    </label>)
-};
+import { Input, Select, Submit } from '../../Component/Forms';
 
-const Select = (props) => {
-  return (
-    <label>
-      {props.label}:
-      <select name={props.name} value={props.value} onChange={props.onChange} >
-        { props.options.map(option => <option key={option.value} value={option.value}>{option.label}</option>) }
-      </select>
-    </label>)
-};
 
 export default class Demarrer extends Component {
   constructor(props) {
@@ -115,8 +98,8 @@ export default class Demarrer extends Component {
     ];
 
     return (
-      <div >
-        <h1>Démmarrer votre projet</h1>
+      <div>
+        <h1>Démarrer votre projet</h1>
         <form onSubmit={this.submit}>
           <Input name="nom" label="Nom du projet" value={projet.nom} onChange={this.onChange} />
           <Select name="type" label="Type de projet" value={projet.type} onChange={this.onChange} options={optionsType} />

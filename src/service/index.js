@@ -32,5 +32,6 @@ function createProjet(projet) {
 createProjet();
 
 export {
-  getProjets
+  getProjets,
+  createProjet
 }
