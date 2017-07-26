@@ -6,24 +6,24 @@
   "devDependencies": {
     "babel-runtime": "^6.22.0",
     "chai": "^3.5.0",
-    "eslint": "^3.7.1",
+    "eslint": "^4.2.0",
     "eslint-plugin-babel": "^3.3.0",
-    "eslint-plugin-react": "^6.4.1",
-    "gh-pages": "^0.11.0",
-    "react-scripts": "0.8.5"
+    "eslint-plugin-react": "^6.10.3",
+    "gh-pages": "^0.11.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",
-    "draft-convert": "^1.4.0",
-    "draft-js": "^0.10.0",
+    "draft-convert": "^1.4.8",
+    "draft-js": "^0.10.1",
     "draftjs-to-html": "^0.6.3",
     "draftjs-to-markdown": "^0.3.2",
-    "grommet": "^1.2.1",
+    "grommet": "^1.5.0",
     "grommet-addons": "^0.3.0",
-    "react": "^15.4.2",
-    "react-dom": "^15.4.2",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
     "react-router": "^2.8.1",
-    "whatwg-fetch": "^1.0.0"
+    "react-scripts": "0.9.x",
+    "whatwg-fetch": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
