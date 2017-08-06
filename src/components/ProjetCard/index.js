@@ -18,7 +18,7 @@ export default class ProjetCard extends Component {
 
     const description = (
       <div>
-      <Paragraph>{this.props.description}</Paragraph>
+      <Paragraph>{this.props.descriptionCourte}</Paragraph>
       <ProgressBar {...this.props} size="medium" />
       </div>
     );

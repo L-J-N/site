@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  ProjetCard from '../../components/ProjetCard/';
+import  ProjetCard from '../../components/ProjetCard';
 
 import { getProjets } from '../../service/';
 
@@ -10,6 +10,7 @@ export default class Decouvrir extends Component {
       projets: []
     };
   }
+
   componentDidMount() {
     getProjets('PUBLIE').then((data) => {
       this.setState({
@@ -17,22 +18,15 @@ export default class Decouvrir extends Component {
       });
     });
   }
+
   render() {
     return (
-      <div>
-        Découvrir
-        { this.props.liste ?
-          <Box pad={{horizontal: "large"}} full="horizontal">
-            <Columns size="medium"
-                     justify="center"
-                     masonry={true}
-                     maxCount={3}
-                     responsive={true}>
-              {this.props.liste.map((p, i) => <ProjetCard key={i} {...p} />)}
-            </Columns>
-          </Box>
-          : null }
-      </div>
+          <div>
+            {this.state.projets && this.state.projets.map((projet, i) => {
+              return <ProjetCard key={i} {...projet} />
+              }
+            )}
+          </div>
     );
   }
 }
