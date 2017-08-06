@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import Categorie from '../../components/Categorie';
 
-import { getCategories } from '../../service/';
+import { getProjets } from '../../service/';
 
 export default class Decouvrir extends Component {
   constructor() {
     super();
     this.state = {
-      categories: []
+      projets: []
     };
   }
   componentDidMount() {
-    getCategories().then((data) => {
+    getProjets('PUBLIE').then((data) => {
       this.setState({
-        categories: data
+        projets: data
       });
     });
   }
   render() {
     return (
       <div>
-        {this.state.categories && this.state.categories.map((cat, i) => {
-          return <Categorie key={i} liste={cat.listeProjet} title={cat.nom} />;
-        }
-        )}
+        Decouvrir
+        { JSON.stringify(this.state.projets)}
       </div>
     );
   }
