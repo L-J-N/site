@@ -8,7 +8,7 @@ import {
   AddCircleIcon
 } from '../../components';
 
-import { getAllProjets} from '../../service';
+import { getAllProjets } from '../../service';
 
 export default class Admin extends Component {
   constructor() {

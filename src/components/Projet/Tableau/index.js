@@ -24,11 +24,11 @@ export default class Tableau extends Component {
 
   render() {
 
-    const { sortIndex, sortAscending } = this.state;
+    // const { sortIndex, sortAscending } = this.state;
 
     return (
       <Table>
-        <TableHeader labels={['Nom', 'Créateur', 'Description', 'Statut']}
+        <TableHeader labels={['Date de dernière modification', 'Statut', 'Projet', 'Créateur', 'Actions']}
           sortIndex={this.sortIndex}
           sortAscending={this.sortAscending}
           onSort={this.sort}
@@ -38,16 +38,17 @@ export default class Tableau extends Component {
           {this.props.projets.map((p, i) => {
             return (<TableRow key={i}>
               <td>
+                {p.statut.statutProjet}
+              </td>
+              <td>
+                {p.statut.dateDebut}
+              </td>
+              <td>
                 {p.nom}
               </td>
-              <td>
                 {p.createur.id}
-              </td>
               <td>
-                {p.descriptionCourte}
-              </td>
-              <td>
-                {p.statut.statutProjet}
+                {'Truc à faire'}
               </td>
             </TableRow>);
             })}
