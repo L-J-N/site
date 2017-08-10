@@ -10,7 +10,7 @@ import {
   Paragraph,
 } from '../../components';
 
-import  ProjetDuMois from '../../components/ProjetDuMois';
+import  ProjetDuMois from '../../components/Projet/ProjetDuMois';
 import  Categorie from '../../components/Categorie';
 
 const text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. ellentesque risus mi.";

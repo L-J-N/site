@@ -7,7 +7,7 @@ import { Box, Paragraph, Meter } from '../index.js';
 export default class ProgessBar extends Component {
   render() {
     const percent = calculPercent(this.props.sommeRecolte, this.props.sommeDemandee);
-    const nbJours = calculRemainingDay(this.props.statut.dateDebut, this.props.delaiRecolte);
+    const nbJours = calculRemainingDay(this.props.dateDebut, this.props.delaiRecolte);
     const montant = this.props.sommeRecolte || 0;
 
     const size = this.props.size || "large";

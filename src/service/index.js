@@ -19,6 +19,12 @@ function getProjets(statut) {
   });
 }
 
+function getAllProjets() {
+  return fetch(`${url}`).then((response) => {
+    return response.json();
+  });
+}
+
 function createProjet(projet) {
   return fetch(url, {
     method: "POST", body: JSON.stringify(proj), headers: {
@@ -33,5 +39,6 @@ createProjet();
 
 export {
   getProjets,
+  getAllProjets,
   createProjet
 }

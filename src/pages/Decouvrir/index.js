@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import  ProjetCard from '../../components/ProjetCard';
+import  ProjetCard from '../../components/Projet/ProjetCard';
 
 import { getProjets } from '../../service/';
 

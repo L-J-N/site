@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Box, Image, Paragraph, Heading, Responsive } from '../index.js';
+import { Box, Image, Paragraph, Heading, Responsive } from '../../index.js';
 
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../../ProgressBar/index';
 
 export default class ProjetDuMois extends Component {
   constructor(props) {
