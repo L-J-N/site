@@ -24,6 +24,7 @@ export default class Demarrer extends Component {
     super(props);
     this.state = {
       projet : {
+        createur: { id:"1"},
         nom: "",
         typeProjet: "",
         secteur: 0,
@@ -35,8 +36,7 @@ export default class Demarrer extends Component {
         pj1: "",
         pj2: "",
         pj3: "",
-        tel: "",
-        createur: "1"
+        tel: ""
       },
       errors: {}
     };
