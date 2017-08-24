@@ -184,7 +184,7 @@ export default class Demarrer extends Component {
             </FormField>
         </FormFields>
         <Footer pad={{"vertical": "medium"}}>
-          <Button label='Soummettre'
+          <Button label='Soumettre'
             type='button'
             primary={true}
             onClick={this.submit} />

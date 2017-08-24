@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import  Tableau from '../../components/Projet/Tableau';
+import  TableauAdmin from '../../components/Projet/TableauAdmin';
 
 import {
   Box,
@@ -37,7 +37,7 @@ export default class Admin extends Component {
           path='/nouveau' />
       </Box>
 
-      <Tableau projets={this.state.projets} />;
+      <TableauAdmin projets={this.state.projets} />;
     </div>
   )}
 
