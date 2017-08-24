@@ -6,9 +6,8 @@ import {
   TableRow,
   Button,
 } from '../..';
-import {updateStatut} from "../../../service/index";
 
-// import { updateStatut } from '../../../service';
+import {updateStatut} from "../../../service/index";
 
 export default class TableauAdmin extends Component {
   constructor() {
@@ -29,25 +28,21 @@ export default class TableauAdmin extends Component {
   updatePublie(e) {
     e.preventDefault();
     updateStatut(this, 'PUBLIE')
-    window.location.reload();
   }
 
   updateRefuse(e) {
     e.preventDefault();
     updateStatut(this, 'REFUSE')
-    window.location.reload();
   }
 
   updateFinance(e) {
     e.preventDefault();
     updateStatut(this, 'FINANCE')
-    window.location.reload();
   }
 
   updateNonFinance(e) {
     e.preventDefault();
     updateStatut(this, 'NON_FINANCE')
-    window.location.reload();
   }
 
   render() {

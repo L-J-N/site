@@ -27,6 +27,7 @@ function updateStatut(idProjet, statut) {
   return fetch(`${url}?idProjet=${idProjet}&statut=${statut}`, {
     method: "PATCH", headers: {'Content-Type': 'application/json'}}
     ).then((response) => {
+    window.location.reload();
     return response.json();
   });
 }
