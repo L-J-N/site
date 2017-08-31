@@ -32,8 +32,8 @@ export default class Projet extends Component {
   render() {
 
     const link = `${process.env.PUBLIC_URL}/${this.props.url}`;
-    const percent = calculPercent(this.props.montant, this.props.total);
-    const nbJours = calculRemainingDay(this.props.dateFin);
+    const percent = calculPercent(this.props.sommeDemandee, this.props.sommeRecolte);
+    const nbJours = calculRemainingDay(this.props.statut.dateDebut, this.props.delaiRecolte);
     const labelJours = nbJours > 1 ? " jours restants" : " jour restant";
 
     const margin = { margin: "10px" };

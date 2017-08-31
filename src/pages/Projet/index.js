@@ -9,8 +9,8 @@ export default class ProjetContainer extends Component {
     this.state = {};
   }
   componentDidMount() {
-    const { projectId } = this.props.params;
-    getProjet(projectId).then((data) => {
+    const { idProjet } = this.props.params;
+    getProjet(idProjet).then((data) => {
       this.setState({
         projet: data
       });

@@ -18,7 +18,7 @@ const Routes = (props) => (
         <Route path="/demarrer" component={Demarrer}></Route>
         <Route path="/admin" component={Admin}></Route>
         <Route path="/nouveau" component={NouveauProjet}></Route>
-        <Route path="/projet/:projectId" component={Projet}></Route>
+        <Route path="/projet/:idProjet" component={Projet}></Route>
     </Route>
   </Router>
 );
