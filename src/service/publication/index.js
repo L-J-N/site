@@ -1,4 +1,4 @@
-import {urlApi} from './../properties';
+import {urlApi, publicationTest} from '../constants';
 const url = urlApi + '/api/publications/v1';
 
 function getPublication(idProjet) {
@@ -7,7 +7,24 @@ function getPublication(idProjet) {
   });
 }
 
+function createPublicationTest(idProjet) {
+  publicationTest.idProjet = idProjet;
+  createPublication(publicationTest);
+}
+
+function createPublication(publication) {
+  return fetch(url, {
+    method: "POST", body: JSON.stringify(publication), headers: {
+      'Content-Type': 'application/json'
+    }
+  }).then((response) => {
+    return response.json();
+  });
+}
+
 
 export {
-  getPublication
+  getPublication,
+  createPublication,
+  createPublicationTest
 }

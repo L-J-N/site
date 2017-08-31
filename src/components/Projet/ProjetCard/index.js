@@ -10,7 +10,7 @@ export default class ProjetCard extends Component {
     this.onClick = this.onClick.bind(this);
   }
   onClick (e) {
-     this.context.router.push(`/projet/${this.props.id}`);
+     this.context.router.push(`/projet/${this.props.idProjet}`);
   }
   render() {
 

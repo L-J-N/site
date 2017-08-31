@@ -1,4 +1,4 @@
-import {urlApi} from './../properties';
+import {urlApi, projetTest} from '../constants';
 const url = urlApi + '/api/projets/v1';
 
 function getProjet(id) {
@@ -26,19 +26,7 @@ function getVignettes(statut) {
 }
 
 function createProjetTest() {
-
-  const projet = {
-    "nom": "Projet test "+new Date().getTime(),
-    "createur": { id: 1},
-    "typeProjet": "ENTREPRISE",
-    "descriptionCourte": "Une description lambda pour tester.",
-    "sommeDemandee": 30000,
-    "sommeRecolte": 0,
-    "delaiRecolte": 30,
-    "adresse": null
-  };
-
-  createProjet(projet);
+  createProjet(projetTest);
 }
 
 function createProjet(projet) {
