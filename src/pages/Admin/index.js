@@ -8,7 +8,7 @@ import {
   AddCircleIcon
 } from '../../components';
 
-import { getAllProjets } from '../../service';
+import { getAllProjets, createProjetTest } from '../../service';
 
 export default class Admin extends Component {
   constructor() {
@@ -18,23 +18,32 @@ export default class Admin extends Component {
   componentDidMount() {
     getAllProjets().then((data) => {
       this.setState({
-        projets: data
+        projets: data,
+        nombreProjets: data.length,
       });
     });
   }
-  render() {
+
+  nouveauProjet(e) {
+    e.preventDefault();
+    createProjetTest();
+  }
+
+
+    render() {
 
     return (
     <div>
       <Box pad='medium'
            colorIndex='neutral-1-a' align="end">
+        Nombre de projets : {this.state.nombreProjets}
         <Button
           icon={<AddCircleIcon />}
-          label='Nouveau Projet'
+          label='Nouveau projet de test'
           primary={false}
           secondary={false}
           accent={false}
-          path='/nouveau' />
+          onClick={this.nouveauProjet} />
       </Box>
 
       <TableauAdmin projets={this.state.projets} />;

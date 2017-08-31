@@ -16,6 +16,7 @@ export default class TableauAdmin extends Component {
       sortIndex: 0,
       sortAscending: false
     };
+    this.acceder = this.acceder.bind(this);
     this.sort = this.sort.bind(this);
   }
   sort(index, ascending) {
@@ -23,6 +24,11 @@ export default class TableauAdmin extends Component {
       sortIndex: index,
       sortAscending: ascending
     });
+  }
+
+  acceder(e) {
+    e.preventDefault();
+    this.context.router.push(`/projet/${this}`);
   }
 
   updatePublie(e) {
@@ -73,6 +79,13 @@ export default class TableauAdmin extends Component {
                 {p.createur.id}
               </td>
               <td>
+                {(p.statut.statutProjet !== 'CREE' &&
+                  p.statut.statutProjet !== 'REFUSE') &&
+                <Button label='CONSULTER'
+                        type='button'
+                        primary={false}
+                        onClick={this.acceder.bind(p.id)} />
+                }
                 {(p.statut.statutProjet === 'CREE' ||
                   p.statut.statutProjet === 'REFUSE') &&
                     <Button label='PUBLIE'
