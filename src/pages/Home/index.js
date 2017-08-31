@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import Home from './Home.js';
-import { getProjets } from '../../service';
+import { getProjets } from '../../service/projet/index';
 
 export default class HomeContainer extends Component {
   constructor() {

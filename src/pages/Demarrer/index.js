@@ -15,7 +15,7 @@ import {
   CheckBox,
 } from '../../components';
 
-import { createProjet } from '../../service';
+import { createProjet } from '../../service/projet/index';
 
 import { isRequired, isTelephone, isMail } from '../../utils/FormValidator';
 

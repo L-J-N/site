@@ -14,7 +14,7 @@ export default class ProjetCard extends Component {
   }
   render() {
 
-    const image = <Image src={this.props.imageUrl} />;
+    const image = <Image src={this.props.imageAffichage} />;
 
     const description = (
       <div>

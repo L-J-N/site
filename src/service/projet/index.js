@@ -1,4 +1,4 @@
-const urlApi = 'https://aqueous-shore-96089.herokuapp.com';
+import {urlApi} from './../properties';
 const url = urlApi + '/api/projets/v1';
 
 function getProjet(id) {
@@ -15,6 +15,12 @@ function getProjets(statut) {
 
 function getAllProjets() {
   return fetch(`${url}`).then((response) => {
+    return response.json();
+  });
+}
+
+function getVignettes(statut) {
+  return fetch(`${url}/vignette?statut=${statut}`).then((response) => {
     return response.json();
   });
 }
@@ -46,6 +52,8 @@ function createProjet(projet) {
   });
 }
 
+
+
 function updateStatut(idProjet, statut) {
   return fetch(`${url}?idProjet=${idProjet}&statut=${statut}`, {
     method: "PATCH", headers: {'Content-Type': 'application/json'}}
@@ -59,6 +67,7 @@ export {
   getProjet,
   getProjets,
   getAllProjets,
+  getVignettes,
   createProjet,
   createProjetTest,
   updateStatut

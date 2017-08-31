@@ -7,7 +7,7 @@ import {
   Button,
 } from '../..';
 
-import {updateStatut} from "../../../service/index";
+import {updateStatut} from "../../../service/projet/index";
 
 export default class TableauAdmin extends Component {
   constructor() {
@@ -76,7 +76,7 @@ export default class TableauAdmin extends Component {
                 {p.nom}
               </td>
               <td>
-                {p.createur.id}
+                {p.createur.nom + " " + p.createur.prenom}
               </td>
               <td>
                 {(p.statut.statutProjet !== 'CREE' &&

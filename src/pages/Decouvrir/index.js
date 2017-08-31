@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  ProjetCard from '../../components/Projet/ProjetCard';
 
-import { getProjets } from '../../service/';
+import { getVignettes } from '../../service/projet/index';
 
 export default class Decouvrir extends Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class Decouvrir extends Component {
   }
 
   componentDidMount() {
-    getProjets('PUBLIE').then((data) => {
+    getVignettes('PUBLIE').then((data) => {
       this.setState({
         projets: data
       });
