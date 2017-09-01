@@ -40,12 +40,19 @@ function createProjet(projet) {
   });
 }
 
-
-
 function updateStatut(idProjet, statut) {
   return fetch(`${url}?idProjet=${idProjet}&statut=${statut}`, {
     method: "PATCH", headers: {'Content-Type': 'application/json'}}
     ).then((response) => {
+    window.location.reload();
+    return response.json();
+  });
+}
+
+function updateSomme(idProjet, somme) {
+  return fetch(`${url}?idProjet=${idProjet}&somme=${somme}`, {
+    method: "PATCH", headers: {'Content-Type': 'application/json;charset=utf-8'}}
+  ).then((response) => {
     window.location.reload();
     return response.json();
   });
@@ -58,5 +65,6 @@ export {
   getVignettes,
   createProjet,
   createProjetTest,
-  updateStatut
+  updateStatut,
+  updateSomme
 }

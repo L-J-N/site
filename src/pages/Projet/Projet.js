@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import calculPercent from '../../utils/calculPercent';
 import calculRemainingDay from '../../utils/calculRemainingDay';
+
+import { updateSomme } from '../../service/projet/index';
 
 import {
   Box,
@@ -29,10 +30,22 @@ export default class Projet extends Component {
       currentTab: i
     });
   }
+
+  soutenirProjet(e) {
+    e.preventDefault();
+    var somme = prompt('De combien voulez-vous soutenir le projet ?');
+
+    if (somme > 0 && somme < 100000) {
+      updateSomme(this, somme);
+    } else {
+      alert('Veuillez entrer un nombre correct ou raisonable.')
+    }
+  }
   render() {
 
     const projet = this.props.projet;
     const publication = this.props.publication;
+    const createur = projet.createur;
 
     const link = `${process.env.PUBLIC_URL}/${this.props.url}`;
     const percent = calculPercent(projet.sommeRecolte, projet.sommeDemandee);
@@ -60,16 +73,17 @@ export default class Projet extends Component {
           </Box>
           <Box pad="large">
             <Box  >
+              <Value value={projet.sommeRecolte + "/" + projet.sommeDemandee + "€"} size='large' style={margin} />
               <Value value={percent} icon={<MoneyIcon size='large' />} units='%' size='large' style={margin} />
 
               <Value value={nbJours} units={labelJours} size='large' style={margin} />
 
               <Value value={projet.localite} size='large' style={margin} />
 
-              <Button label='Faire un don' primary={true} fill={true} style={margin} />
+              <Button label='Soutenir le projet' primary={true} fill={true} style={margin} onClick={this.soutenirProjet.bind(projet.id)} />
             </Box>
             <Box pad="small" >
-              <Value value={projet.createur.nom + " " + projet.createur.prenom} size="small" trendIcon={<LoginIcon />} style={margin} />
+              <Value value={createur.nom + " " + createur.prenom} size="small" trendIcon={<LoginIcon />} style={margin} />
               <Value value="2 projets créés" size="small" style={margin} />
               <Value value="www.jean-bon.com" size="small" style={margin} />
             </Box>
