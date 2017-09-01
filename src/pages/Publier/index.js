@@ -15,13 +15,22 @@ import InlineStyleControls from './InlineStyleControls';
 import {
   Section,
   Box,
+  Form,
+  FormFields,
+  FormField,
+  Header,
+  Heading,
+  Footer,
+  TextInput,
   Button,
-  Anchor,
   ImageIcon,
   VideoIcon
 } from '../../components';
 
-export default class NouveauProjet extends Component {
+import { getProjet} from '../../service/projet/index';
+import { getPublication} from '../../service/publication/index';
+
+export default class Publier extends Component {
 
   constructor(props) {
     super(props);
@@ -42,6 +51,20 @@ export default class NouveauProjet extends Component {
     this.addMedia = this.addMedia.bind(this);
     this.onClickImage = this.onClick.bind(this, 'image');
     this.onClickVideo = this.onClick.bind(this, 'video');
+  }
+
+  componentDidMount() {
+    const { idProjet } = this.props.params;
+    getProjet(idProjet).then((data) => {
+      this.setState({
+        projet: data
+      });
+    });
+    getPublication(idProjet).then((data) => {
+      this.setState({
+        publication: data
+      });
+    });
   }
 
   createEditorState(content = null, decorators = null) {
@@ -128,50 +151,66 @@ export default class NouveauProjet extends Component {
 
   render() {
 
+    const publication = this.state.publication;
+
     const { editorState } = this.state;
 
     return (
-      <Section pad={{ horizontal: "xlarge", vertical: "medium" }} colorIndex="light-2" full="vertical"   >
-        <Box separator="all" >
-          <div className="editor" >
-            <div className="editor-menu">
-              <BlockStyleControls
-                editorState={editorState}
-                onToggle={this.toggleBlockType}
-                />
-              <InlineStyleControls
-                editorState={editorState}
-                onToggle={this.toggleInlineStyle}
-                />
-              <div className="editor-media">
-                <a onClick={this.onClickImage}><ImageIcon size="small" /></a>
-                <a onClick={this.onClickVideo}><VideoIcon size="small" /></a>
+      <Box align="center" >
+        <div>
+          {/*{this.state.projet.nom}*/}
+        </div>
+
+        <Form pad="medium" >
+          <FormField label="Url Image" htmlFor="description" >
+            {/*<TextInput id="imageAffichage" name="imageAffichage" value={publication.imageAffichage}  />*/}
+          </FormField>
+          <FormField label="Url Média" htmlFor="description" >
+            {/*<TextInput id="mediaPrincipal" name="mediaPrincipal" value={publication.mediaPrincipal}  />*/}
+          </FormField>
+          <Section pad={{ horizontal: "xlarge", vertical: "medium" }} colorIndex="light-2" full="vertical"   >
+            <Box separator="all" >
+              <div className="editor" >
+                <div className="editor-menu">
+                  <BlockStyleControls
+                    editorState={editorState}
+                    onToggle={this.toggleBlockType}
+                    />
+                  <InlineStyleControls
+                    editorState={editorState}
+                    onToggle={this.toggleInlineStyle}
+                    />
+                  <div className="editor-media">
+                    <a onClick={this.onClickImage}><ImageIcon size="small" /></a>
+                    <a onClick={this.onClickVideo}><VideoIcon size="small" /></a>
+                  </div>
+                </div>
+                <div className="editor-editor" onClick={this.focus} >
+                  <Editor
+                    ref="editor"
+                    editorState={editorState}
+                    onChange={this.onChange}
+                    blockStyleFn={BlockStyle}
+                    blockRendererFn={BlockRender}
+                    placeholder="Entrez votre texte ici ..."
+                    />
+                </div>
               </div>
-            </div>
-            <div className="editor-editor" onClick={this.focus} >
-              <Editor
-                ref="editor"
-                editorState={editorState}
-                onChange={this.onChange}
-                blockStyleFn={BlockStyle}
-                blockRendererFn={BlockRender}
-                placeholder="Entrez votre texte ici ..."
-                />
-            </div>
-          </div>
-          <Box direction="row" colorIndex="light-1" pad="large">
-            <Button label='Html'
-              primary={true}
-              onClick={this.toHtml} />
-            <Button label='Markdown'
-              primary={true}
-              onClick={this.toMd} />
-            <Button label='json'
-              primary={true}
-              onClick={this.toJson} />
-          </Box>
-        </Box>
-      </Section>
+              <Box direction="row" colorIndex="light-1" pad="large">
+                <Button label='Html'
+                  primary={true}
+                  onClick={this.toHtml} />
+                <Button label='Markdown'
+                  primary={true}
+                  onClick={this.toMd} />
+                <Button label='json'
+                  primary={true}
+                  onClick={this.toJson} />
+              </Box>
+            </Box>
+          </Section>
+        </Form>
+      </Box>
     );
   }
 }

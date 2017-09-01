@@ -16,7 +16,6 @@ export default class TableauAdmin extends Component {
       sortIndex: 0,
       sortAscending: false
     };
-    this.acceder = this.acceder.bind(this);
     this.sort = this.sort.bind(this);
   }
   sort(index, ascending) {
@@ -28,27 +27,19 @@ export default class TableauAdmin extends Component {
 
   acceder(e) {
     e.preventDefault();
-    this.context.router.push(`/projet/${this}`);
+    window.location.href = window.location.origin + "/projet/" + this;
   }
 
-  updatePublie(e) {
+  editerPublication(e) {
     e.preventDefault();
-    updateStatut(this, 'PUBLIE')
+    window.location.href = window.location.origin + "/publier/" + this;
   }
 
-  updateRefuse(e) {
+  updateStatut(e) {
     e.preventDefault();
-    updateStatut(this, 'REFUSE')
-  }
 
-  updateFinance(e) {
-    e.preventDefault();
-    updateStatut(this, 'FINANCE')
-  }
-
-  updateNonFinance(e) {
-    e.preventDefault();
-    updateStatut(this, 'NON_FINANCE')
+    var statut = prompt('Nouveau statut ? (entrer exactement CREE, REFUSE, PUBLIE, FINANCE ou NON_FINANCE)');
+    updateStatut(this, statut)
   }
 
   render() {
@@ -81,38 +72,23 @@ export default class TableauAdmin extends Component {
               <td>
                 {(p.statut.statutProjet !== 'CREE' &&
                   p.statut.statutProjet !== 'REFUSE') &&
-                <Button label='CONSULTER'
+                <Button id="123"
+                        label='CONSULTER'
                         type='button'
                         primary={false}
                         onClick={this.acceder.bind(p.id)} />
                 }
                 {(p.statut.statutProjet === 'CREE' ||
-                  p.statut.statutProjet === 'REFUSE') &&
-                    <Button label='PUBLIE'
-                    type='button'
-                    primary={false}
-                    onClick={this.updatePublie.bind(p.id)} />
-                }
-                {p.statut.statutProjet === 'CREE' &&
-                <Button label='REFUSE'
+                  p.statut.statutProjet === 'PUBLIE') &&
+                <Button label='EDITER PUBLICATION'
                         type='button'
                         primary={false}
-                        onClick={this.updateRefuse.bind(p.id)} />
+                        onClick={this.editerPublication.bind(p.id)} />
                 }
-                {(p.statut.statutProjet === 'PUBLIE' ||
-                  p.statut.statutProjet === 'NON_FINANCE') &&
-                <Button label='FINANCE'
-                        type='button'
-                        primary={false}
-                        onClick={this.updateFinance.bind(p.id)} />
-                }
-                {(p.statut.statutProjet === 'PUBLIE' ||
-                  p.statut.statutProjet === 'FINANCE') &&
-                <Button label='NON FINANCE'
-                        type='button'
-                        primary={false}
-                        onClick={this.updateNonFinance.bind(p.id)} />
-                }
+                  <Button label='CHANGER STATUT'
+                  type='button'
+                  primary={false}
+                  onClick={this.updateStatut.bind(p.id)} />
               </td>
             </TableRow>);
             })}
