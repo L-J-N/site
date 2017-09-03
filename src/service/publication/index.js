@@ -7,17 +7,13 @@ function getPublication(idProjet) {
   });
 }
 
-function createPublicationTest(idProjet) {
-  publicationTest.idProjet = idProjet;
-  createPublication(publicationTest);
-}
-
-function createPublication(publication) {
+function updatePublication(publication) {
   return fetch(url, {
-    method: "POST", body: JSON.stringify(publication), headers: {
+    method: "PUT", body: JSON.stringify(publication), headers: {
       'Content-Type': 'application/json'
     }
   }).then((response) => {
+    window.location.href = window.location.origin + "/projet/" + publication.idProjet;
     return response.json();
   });
 }
@@ -25,6 +21,5 @@ function createPublication(publication) {
 
 export {
   getPublication,
-  createPublication,
-  createPublicationTest
+  updatePublication
 }

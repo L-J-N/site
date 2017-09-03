@@ -10,10 +10,3 @@ export const projetTest = {
   "delaiRecolte": 30,
   "adresse": null
 };
-
-export const publicationTest = {
-  "descriptionLongue": "<p>Test de description longue. Mon sexe aussi est long.</p>",
-  "imageAffichage": "https://pre00.deviantart.net/c69a/th/pre/i/2011/093/d/c/bulbasaur_by_holyfork-d3d5ryg.png",
-  "idProjet": ""
-};
-

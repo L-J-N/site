@@ -86,7 +86,6 @@ export default class Demarrer extends Component {
     }
 
     if (valid) {
-      console.log(projet);
       createProjet(projet);
     }
 
