@@ -25,16 +25,6 @@ export default class TableauAdmin extends Component {
     });
   }
 
-  acceder(e) {
-    e.preventDefault();
-    window.location.href = window.location.origin + "/projet/" + this;
-  }
-
-  editerPublication(e) {
-    e.preventDefault();
-    window.location.href = window.location.origin + "/publier/" + this;
-  }
-
   updateStatut(e) {
     e.preventDefault();
 
@@ -76,14 +66,14 @@ export default class TableauAdmin extends Component {
                         label='CONSULTER'
                         type='button'
                         primary={false}
-                        onClick={this.acceder.bind(p.id)} />
+                        onClick={() => { this.props.consulter(window.location.href = window.location.origin + "/projet/" + p.id) }} />
                 }
                 {(p.statut.statutProjet === 'CREE' ||
                   p.statut.statutProjet === 'PUBLIE') &&
                 <Button label='EDITER PUBLICATION'
                         type='button'
                         primary={false}
-                        onClick={this.editerPublication.bind(p.id)} />
+                        onClick={() => { this.props.editerPublication(window.location.href = window.location.origin + "/publier/" + p.id) }} />
                 }
                   <Button label='CHANGER STATUT'
                   type='button'
