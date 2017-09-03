@@ -43,7 +43,7 @@ export default class ProjetDuMois extends Component {
       <Box appCentered={true} align="center" justify="center" primary={true} pad="small"  >
         <Heading>Projet du Mois</Heading>
         <Box direction="row" onClick={this.onClick} >
-          <Image src={this.props.imageAffichage} size="small" />
+          <Image src={this.props.imageAffichage} size={imageSize} />
           <Box pad="medium" >
             <Heading>{this.props.nom}</Heading>
             <Paragraph>{this.props.descriptionCourte}</Paragraph>

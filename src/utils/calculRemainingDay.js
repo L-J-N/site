@@ -1,4 +1,4 @@
-const oneDay = 24 * 60 * 60 * 1000;
+// const oneDay = 24 * 60 * 60 * 1000;
 
 export default function calculRemainingDay(date, delaiRecolte) {
   if (!date) {
