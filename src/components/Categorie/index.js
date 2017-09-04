@@ -7,7 +7,7 @@ import {
   Columns
 } from '../index';
 
-import  ProjetCard from '../../components/ProjetCard';
+import  ProjetCard from '../Projet/ProjetCard';
 
 export default class Categorie extends Component {
   render() {

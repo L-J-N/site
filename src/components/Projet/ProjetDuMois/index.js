@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Box, Image, Paragraph, Heading, Responsive } from '../index.js';
+import { Box, Image, Paragraph, Heading, Responsive } from '../../index.js';
 
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../../ProgressBar/index';
 
 export default class ProjetDuMois extends Component {
   constructor(props) {
@@ -29,7 +29,7 @@ export default class ProjetDuMois extends Component {
   }
 
   onClick (e) {
-    this.context.router.push(`/projet/${this.props.id}`);
+    this.context.router.push(`/projet/${this.props.idProjet}`);
   }
 
   render() {
@@ -43,10 +43,10 @@ export default class ProjetDuMois extends Component {
       <Box appCentered={true} align="center" justify="center" primary={true} pad="small"  >
         <Heading>Projet du Mois</Heading>
         <Box direction="row" onClick={this.onClick} >
-          <Image src={this.props.imageUrl} size={imageSize} />
+          <Image src={this.props.imageAffichage} size={imageSize} />
           <Box pad="medium" >
             <Heading>{this.props.nom}</Heading>
-            <Paragraph>{this.props.description}</Paragraph>
+            <Paragraph>{this.props.descriptionCourte}</Paragraph>
             <ProgressBar {...this.props} />
           </Box>
         </Box>

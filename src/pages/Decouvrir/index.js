@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-import Categorie from '../../components/Categorie';
+import  ProjetCard from '../../components/Projet/ProjetCard';
 
-import { getCategories } from '../../service/';
+import { getVignettes } from '../../service/projet/index';
 
 export default class Decouvrir extends Component {
   constructor() {
     super();
     this.state = {
-      categories: []
+      projets: []
     };
   }
+
   componentDidMount() {
-    getCategories().then((data) => {
+    getVignettes('PUBLIE').then((data) => {
       this.setState({
-        categories: data
+        projets: data
       });
     });
   }
+
   render() {
     return (
-      <div>
-        {this.state.categories && this.state.categories.map((cat, i) => {
-          return <Categorie key={i} liste={cat.listeProjet} title={cat.nom} />;
-        }
-        )}
-      </div>
+          <div>
+            {this.state.projets && this.state.projets.map((projet, i) => {
+              return <ProjetCard key={i} {...projet} />
+              }
+            )}
+          </div>
     );
   }
 }

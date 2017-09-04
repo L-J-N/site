@@ -1,81 +1,53 @@
 import React, { Component } from 'react';
 
+import  TableauAdmin from '../../components/Projet/TableauAdmin';
+
 import {
-  Table,
-  TableHeader,
-  TableRow,
   Box,
   Button,
   AddCircleIcon
 } from '../../components';
 
+import { getAllProjets, createProjetTest } from '../../service/projet/index';
+
 export default class Admin extends Component {
   constructor() {
     super();
-    this.state = {
-      sortIndex: 0,
-      sortAscending: false
-    };
-    this.sort = this.sort.bind(this);
+    this.state = {};
   }
-  sort(index, ascending) {
-    this.setState({
-      sortIndex: index,
-      sortAscending: ascending
+  componentDidMount() {
+    getAllProjets().then((data) => {
+      this.setState({
+        projets: data,
+        nombreProjets: data.length,
+      });
     });
   }
-  render() {
 
-    const { sortIndex, sortAscending } = this.state;
+  nouveauProjet(e) {
+    e.preventDefault();
+    createProjetTest();
+  }
 
-    this.projets = [
-      { nom: 'nom', createur: 'toto', description: 'c\'est super', status: 'publié' },
-      { nom: 'nom qdqs', createur: 'jean-mi', description: 'c\'est super', status: 'terminer' },
-      { nom: 'no 2m', createur: 'truc', description: 'c\'est super', status: 'en attente' },
-      { nom: 'nom qsdqsd', createur: 'toto', description: 'c\'est super', status: 'refusé' },
-      { nom: 'nom qfsfqsfqs', createur: 'toto', description: 'c\'est super', status: 'publié' },
 
-    ];
+    render() {
 
     return (
-      <div>
-        <Box pad='medium'
-          colorIndex='neutral-1-a' align="end">
-          <Button
-            icon={<AddCircleIcon />}
-            label='Nouveau Projet'
-            primary={false}
-            secondary={false}
-            accent={false}
-            path='/nouveau' />
-        </Box>
-        <Table>
-          <TableHeader labels={['Nom', 'createur', 'description', 'status']}
-            sortIndex={sortIndex}
-            sortAscending={sortAscending}
-            onSort={this.sort}
-            />
-          <tbody>
-            {this.projets.map((p, i) => {
-              return (<TableRow key={i}>
-                <td>
-                  {p.nom}
-                </td>
-                <td>
-                  {p.createur}
-                </td>
-                <td>
-                  {p.description}
-                </td>
-                <td>
-                  {p.status}
-                </td>
-              </TableRow>);
-            })
-            }
-          </tbody>
-        </Table>
-      </div>
-    );
-  }
+    <div>
+      <Box pad='medium'
+           colorIndex='neutral-1-a' align="end">
+        Nombre de projets : {this.state.nombreProjets}
+        <Button
+          icon={<AddCircleIcon />}
+          label='Nouveau projet de test'
+          primary={false}
+          secondary={false}
+          accent={false}
+          onClick={this.nouveauProjet} />
+      </Box>
+
+      <TableauAdmin projets={this.state.projets} />;
+    </div>
+  )}
+
 }

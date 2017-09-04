@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-
 import calculPercent from '../../utils/calculPercent';
 import calculRemainingDay from '../../utils/calculRemainingDay';
+
+import { updateSomme } from '../../service/projet/index';
 
 import {
   Box,
@@ -29,11 +30,26 @@ export default class Projet extends Component {
       currentTab: i
     });
   }
+
+  soutenirProjet(e) {
+    e.preventDefault();
+    var somme = prompt('De combien voulez-vous soutenir le projet ?');
+
+    if (somme > 0 && somme < 100000) {
+      updateSomme(this, somme);
+    } else {
+      alert('Veuillez entrer un nombre correct ou raisonable.')
+    }
+  }
   render() {
 
+    const projet = this.props.projet;
+    const publication = this.props.publication;
+    const createur = projet.createur;
+
     const link = `${process.env.PUBLIC_URL}/${this.props.url}`;
-    const percent = calculPercent(this.props.montant, this.props.total);
-    const nbJours = calculRemainingDay(this.props.dateFin);
+    const percent = calculPercent(projet.sommeRecolte, projet.sommeDemandee);
+    const nbJours = calculRemainingDay(projet.statut.dateDebut, projet.delaiRecolte);
     const labelJours = nbJours > 1 ? " jours restants" : " jour restant";
 
     const margin = { margin: "10px" };
@@ -43,9 +59,9 @@ export default class Projet extends Component {
         <Box direction="row" justify='center' align='start' pad="large" colorIndex='light-2' >
           <Box pad="large"  >
 
-            <Image src={this.props.imageUrl} size="large" />
+            <Image src={publication.imageAffichage} size="large" />
 
-            <Heading>{this.props.descriptionCourte}</Heading>
+            <Heading>{projet.descriptionCourte}</Heading>
 
             <Box direction="row" responsive={false} >
               <SocialShare link={link} type="email" />
@@ -57,16 +73,17 @@ export default class Projet extends Component {
           </Box>
           <Box pad="large">
             <Box  >
+              <Value value={projet.sommeRecolte + "/" + projet.sommeDemandee + "€"} size='large' style={margin} />
               <Value value={percent} icon={<MoneyIcon size='large' />} units='%' size='large' style={margin} />
 
               <Value value={nbJours} units={labelJours} size='large' style={margin} />
 
-              <Value value={this.props.localite} size='large' style={margin} />
+              <Value value={projet.localite} size='large' style={margin} />
 
-              <Button label='Faire un don' primary={true} fill={true} style={margin} />
+              <Button label='Soutenir le projet' primary={true} fill={true} style={margin} onClick={this.soutenirProjet.bind(projet.id)} />
             </Box>
             <Box pad="small" >
-              <Value value="Jean Bon" size="small" trendIcon={<LoginIcon />} style={margin} />
+              <Value value={createur.nom + " " + createur.prenom} size="small" trendIcon={<LoginIcon />} style={margin} />
               <Value value="2 projets créés" size="small" style={margin} />
               <Value value="www.jean-bon.com" size="small" style={margin} />
             </Box>
@@ -76,7 +93,7 @@ export default class Projet extends Component {
           <Tabs justify='start'
             activeIndex={this.state.currentTab} onActive={this.clickTab}  >
             <Tab title='Description'>
-              test
+              <div dangerouslySetInnerHTML={{__html: publication.descriptionLongue}}></div>
             </Tab>
             <Tab title='Evolution'>
               test 2

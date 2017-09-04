@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 
 import Home from './Home.js';
-import { getCategories } from '../../service';
+import { getVignettes } from '../../service/projet/index';
 
 export default class HomeContainer extends Component {
   constructor() {
@@ -10,10 +10,10 @@ export default class HomeContainer extends Component {
     this.state = {};
   }
   componentDidMount() {
-    getCategories().then((data) => {
+    getVignettes('PUBLIE').then((data) => {
       this.setState({
-        projetDuMois: data[0].listeProjet[0],
-        listeProjet: data[2].listeProjet
+        projetDuMois: data[0],
+        listeProjet: data
       });
     });
   }

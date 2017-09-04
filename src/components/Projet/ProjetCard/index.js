@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 
-import { Card, Image, Paragraph } from '../index.js';
+import { Card, Image, Paragraph } from '../../index.js';
 
-import ProgressBar from '../ProgressBar';
+import ProgressBar from '../../ProgressBar/index';
 
 export default class ProjetCard extends Component {
   constructor(props) {
@@ -10,15 +10,15 @@ export default class ProjetCard extends Component {
     this.onClick = this.onClick.bind(this);
   }
   onClick (e) {
-     this.context.router.push(`/projet/${this.props.id}`);
+     this.context.router.push(`/projet/${this.props.idProjet}`);
   }
   render() {
 
-    const image = <Image src={this.props.imageUrl} />;
+    const image = <Image src={this.props.imageAffichage} />;
 
     const description = (
       <div>
-      <Paragraph>{this.props.description}</Paragraph>
+      <Paragraph>{this.props.descriptionCourte}</Paragraph>
       <ProgressBar {...this.props} size="medium" />
       </div>
     );

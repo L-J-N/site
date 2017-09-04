@@ -15,6 +15,8 @@ import {
   CheckBox,
 } from '../../components';
 
+import { createProjet } from '../../service/projet/index';
+
 import { isRequired, isTelephone, isMail } from '../../utils/FormValidator';
 
 export default class Demarrer extends Component {
@@ -22,8 +24,9 @@ export default class Demarrer extends Component {
     super(props);
     this.state = {
       projet : {
+        createur: { id:"1"},
         nom: "",
-        type: "",
+        typeProjet: "",
         secteur: 0,
         description: "",
         localite: "",
@@ -33,7 +36,7 @@ export default class Demarrer extends Component {
         pj1: "",
         pj2: "",
         pj3: "",
-        tel: "",
+        tel: ""
       },
       errors: {}
     };
@@ -50,7 +53,7 @@ export default class Demarrer extends Component {
     const projet = this.state.projet;
 
     errors.nom = isRequired(projet.nom);
-    errors.type = isRequired(projet.type);
+    errors.typeProjet = isRequired(projet.typeProjet);
     errors.secteur = isRequired(projet.secteur);
     errors.description = isRequired(projet.description);
     errors.localite = isRequired(projet.localite);
@@ -72,10 +75,23 @@ export default class Demarrer extends Component {
       errors : errors
     });
 
-    console.log(this.state);
+    console.log(errors);
+
+    var valid = true;
+
+    for (var error in errors) {
+      if (errors[error]) {
+        valid = false;
+      }
+    }
+
+    if (valid) {
+      createProjet(projet);
+    }
 
    return false;
   }
+
   onChange(e) {
     const projet = this.state.projet;
     projet[e.target.name] =  e.target.value;
@@ -85,7 +101,7 @@ export default class Demarrer extends Component {
   }
    onSelectChange(e) {
     const projet = this.state.projet;
-    projet[e.target.name] =  e.value;
+    projet[e.target.name] =  e.value.value;
     this.setState({
       projet : projet
     });
@@ -102,10 +118,9 @@ export default class Demarrer extends Component {
     const { projet, errors }  = this.state;
 
     const optionsType = [
-      { value : 0, label : "Création d'entreprise" },
-      { value : 1, label : "Reprise d'entreprise" },
-      { value : 2, label : "Association" },
-      { value : 3, label : "trésorerie d'entreprise" }
+      { value : "CREATION_ENTREPRISE", label : "Création d'entreprise" },
+      { value : "REPRISE_ENTREPRISE", label : "Reprise d'entreprise" },
+      { value : "ASSOCIATION", label : "Association" }
     ];
 
     const optionsSecteur = [
@@ -125,8 +140,8 @@ export default class Demarrer extends Component {
           <FormField label="Nom du projet" htmlFor="nom" error={errors.nom}  >
             <TextInput type="text" id="nom" name="nom" onDOMChange={this.onChange} value={projet.nom} />
           </FormField>
-           <FormField label="Type de projet" htmlFor="type" error={errors.type} >
-            <Select id="type" name="type" options={optionsType} onChange={this.onSelectChange} value={projet.type} />
+           <FormField label="Type de projet" htmlFor="typeProjet" error={errors.typeProjet} >
+            <Select id="typeProjet" name="typeProjet" options={optionsType} onChange={this.onSelectChange} value={projet.typeProjet} />
           </FormField>
             <FormField label="Secteur d'activité" htmlFor="secteur" error={errors.secteur} >
             <Select id="secteur" name="secteur" options={optionsSecteur} onChange={this.onSelectChange}  value={projet.secteur} />
@@ -168,7 +183,7 @@ export default class Demarrer extends Component {
             </FormField>
         </FormFields>
         <Footer pad={{"vertical": "medium"}}>
-          <Button label='Soummettre'
+          <Button label='Soumettre'
             type='button'
             primary={true}
             onClick={this.submit} />
