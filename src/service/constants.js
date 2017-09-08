@@ -9,5 +9,5 @@ export const projetTest = {
   "sommeRecolte": 0,
   "delaiRecolte": 30,
   "adresse": null,
-  "commentaire": "<p style='color:#f927ff'>Un petit commentaire</p>"
+  "commentaire": "<p style='color:#f927ff'>Un petit commentaire pour tester.</p>"
 };
