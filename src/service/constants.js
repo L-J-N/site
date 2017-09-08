@@ -8,5 +8,6 @@ export const projetTest = {
   "sommeDemandee": 30000,
   "sommeRecolte": 0,
   "delaiRecolte": 30,
-  "adresse": null
+  "adresse": null,
+  "commentaire": "<p style='color:#f927ff'>Un petit commentaire</p>"
 };

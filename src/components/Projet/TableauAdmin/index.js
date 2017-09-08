@@ -38,7 +38,7 @@ export default class TableauAdmin extends Component {
 
     return (
       <Table>
-        <TableHeader labels={['Statut', 'Date de dernière modification', 'Projet', 'Créateur', 'Actions']}
+        <TableHeader labels={['Statut', 'Date de dernière modification', 'Projet', 'Créateur', 'Actions', 'Commentaire']}
           sortIndex={this.sortIndex}
           sortAscending={this.sortAscending}
           onSort={this.sort}
@@ -60,15 +60,12 @@ export default class TableauAdmin extends Component {
                 {p.createur.nom + " " + p.createur.prenom}
               </td>
               <td>
-                {(p.statut.statutProjet !== 'CREE' &&
-                  p.statut.statutProjet !== 'REFUSE') &&
                 <Button id="123"
                         label='CONSULTER'
                         type='button'
                         primary={false}
                         onClick={() => { this.props.consulter(window.location.href = window.location.origin + "/projet/" + p.id) }} />
-                }
-                {(p.statut.statutProjet === 'CREE' ||
+                {(p.statut.statutProjet === 'EN_ATTENTE_PUBLICATION' ||
                   p.statut.statutProjet === 'PUBLIE') &&
                 <Button label='EDITER PUBLICATION'
                         type='button'
@@ -79,6 +76,9 @@ export default class TableauAdmin extends Component {
                   type='button'
                   primary={false}
                   onClick={this.updateStatut.bind(p.id)} />
+              </td>
+              <td>
+                <div dangerouslySetInnerHTML={{__html: p.commentaire}}></div>
               </td>
             </TableRow>);
             })}
