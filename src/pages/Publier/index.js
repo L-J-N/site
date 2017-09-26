@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 
 import { Editor, EditorState, convertToRaw, convertFromRaw, RichUtils, AtomicBlockUtils } from 'draft-js';
 import '../../../node_modules/draft-js/dist/Draft.css';
-import draftToHtml from 'draftjs-to-html';
-import draftToMarkdown from 'draftjs-to-markdown';
 
 import './index.css';
 
@@ -18,8 +16,6 @@ import {
   Form,
   FormFields,
   FormField,
-  Header,
-  Heading,
   Footer,
   TextInput,
   Button,
@@ -27,8 +23,8 @@ import {
   VideoIcon
 } from '../../components';
 
-import { getProjet} from '../../service/projet/index';
-import {updatePublication, getPublication} from '../../service/publication/index';
+import { getProjet } from '../../service/projet/index';
+import { updatePublication, getPublication } from '../../service/publication/index';
 
 export default class Publier extends Component {
 
@@ -38,18 +34,15 @@ export default class Publier extends Component {
       editorState: this.createEditorState(),
       urlValue: '',
       urlType: '',
-      projet: [],
-      publication : []
-    }
+      projet: {},
+      publication : {}
+    };
     this.focus = () => this.refs.editor.focus();
     this.onChange = this.onChange.bind(this);
     this.onURLChange = (e) => this.setState({ urlValue: e.target.value });
     this.onEditorChange = this.onEditorChange.bind(this);
     this.toggleBlockType = this.toggleBlockType.bind(this);
     this.toggleInlineStyle = this.toggleInlineStyle.bind(this);
-    this.toHtml = this.toHtml.bind(this);
-    this.toMd = this.toMd.bind(this);
-    this.toJson = this.toJson.bind(this);
     this.addMedia = this.addMedia.bind(this);
     this.onClickImage = this.onClick.bind(this, 'image');
     this.onClickVideo = this.onClick.bind(this, 'video');
@@ -66,7 +59,8 @@ export default class Publier extends Component {
     });
     getPublication(idProjet).then((data) => {
       this.setState({
-        publication: data
+        publication: data,
+        editorState :  this.createEditorState(data.textEditor)
       });
     });
   }
@@ -90,21 +84,6 @@ export default class Publier extends Component {
     this.setState({
       editorState
     });
-  }
-
-  toHtml() {
-    const value = draftToHtml(convertToRaw(this.state.editorState.getCurrentContent()));
-    console.log(value);
-  }
-
-  toMd() {
-    const value = draftToMarkdown(convertToRaw(this.state.editorState.getCurrentContent()));
-    console.log(value);
-  }
-
-  toJson() {
-    const value = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
-    console.log(value);
   }
 
   addMedia(urlType, urlValue) {
@@ -163,7 +142,9 @@ export default class Publier extends Component {
 
   submit(e) {
     e.preventDefault();
-    updatePublication(this.state.publication);
+    const publication = this.state.publication;
+    publication.textEditor = JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent()));
+    updatePublication(publication);
   }
 
   render() {
@@ -215,21 +196,10 @@ export default class Publier extends Component {
                       />
                   </div>
                 </div>
-                <Box direction="row" colorIndex="light-1" pad="large">
-                  <Button label='Html'
-                    primary={true}
-                    onClick={this.toHtml} />
-                  <Button label='Markdown'
-                    primary={true}
-                    onClick={this.toMd} />
-                  <Button label='json'
-                    primary={true}
-                    onClick={this.toJson} />
-                </Box>
               </Box>
             </Section>
           </FormFields>
-          <Footer pad={{"vertical": "medium"}}>
+          <Footer pad={{ "vertical": "medium" }}>
             <Button label='Publier'
                     type='button'
                     primary={true}
